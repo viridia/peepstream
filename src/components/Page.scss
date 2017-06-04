@@ -1,0 +1,69 @@
+.page {
+  > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+
+    .client-state {
+      padding: 6px 12px;
+      background-color: #ddd;
+      border-radius: 4px;
+
+      &.reconnecting {
+        background-color: #ddb;
+      }
+      &.error {
+        background-color: #e99;
+      }
+      &.open {
+        background-color: #cbf;
+      }
+      &.closed {
+        background-color: #dbb;
+      }
+    }
+  }
+
+  ul.nav {
+    border-bottom: none;
+    margin-top: 4px;
+
+    > li {
+      margin: 4px 8px;
+      border: none;
+      > a {
+        padding: 0;
+        text-decoration: none;
+        color: #555;
+        border: none !important;
+        background: none;
+      }
+
+      &:hover {
+        > a {
+          color: black;
+        }
+      }
+
+      &.active {
+        border-bottom: 3px solid #77e;
+        > a {
+          color: black;
+        }
+      }
+
+      &.disabled {
+        border-color: #aaa;
+        > a {
+          color: #aaa;
+        }
+      }
+    }
+  }
+
+  .alert {
+    margin: 6px;
+  }
+}

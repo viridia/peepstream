@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es6",
+    "jsx": "react",
+    "baseUrl": "./src",
+    "experimentalDecorators": true,
+    "types": [
+      "webpack-env"
+    ],
+    "typeRoots": [
+      "node_modules/@types",
+      "node_modules/deepstream.io-client-ks/src"
+    ]
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
+  ],
+  "exclude": [
+    "./src/**/*.spec.ts"
+  ]
+}
