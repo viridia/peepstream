@@ -12,7 +12,7 @@ interface State {
   event: string;
 }
 
-export default class LoginDialog extends React.Component<Props, State> {
+export default class SubscribeDialog extends React.Component<Props, State> {
   constructor() {
     super();
     this.state = {

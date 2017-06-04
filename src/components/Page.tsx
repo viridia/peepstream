@@ -4,11 +4,14 @@ import * as deepstream from 'deepstream.io-client-js';
 import * as React from 'react';
 import { Alert, Button, Modal, Nav, NavItem } from 'react-bootstrap';
 import EventModel from '../EventModel';
+import RpcResultModel from '../RpcResultModel';
+import CallDialog from './CallDialog';
 import EventList from './EventList';
 import LoginDialog from './LoginDialog';
 import './Page.scss';
 import PostDialog from './PostDialog';
 import PresenceList from './PresenceList';
+import RpcResultList from './RpcResultList';
 import './styles/bootstrap.scss';
 import './styles/controls.scss';
 import './styles/dialog.scss';
@@ -20,6 +23,7 @@ interface State {
   showConnecting: boolean;
   showPost: boolean;
   showSubscribe: boolean;
+  showCall: boolean;
   clientState: string;
   clientUrl: string;
   alert?: string;
@@ -30,20 +34,23 @@ interface State {
 export default class Page extends React.Component<undefined, State> {
   private client?: deepstreamIO.Client;
   private eventModel: EventModel;
+  private rpcResultModel: RpcResultModel;
 
   constructor() {
     super();
     this.client = null;
     this.eventModel = null;
+    this.rpcResultModel = null;
     this.state = {
       showLogin: false,
       showConnecting: false,
       showSubscribe: false,
       showPost: false,
+      showCall: false,
       clientState: 'CLOSED',
       clientUrl: '',
       alert: null,
-      navSelection: 'users',
+      navSelection: 'events',
       servers: JSON.parse(window.sessionStorage.getItem('deepstream-servers')) || {},
     };
   }
@@ -53,6 +60,7 @@ export default class Page extends React.Component<undefined, State> {
     switch (this.state.navSelection) {
       case 'users': return <PresenceList client={this.client} />;
       case 'events': return <EventList events={this.eventModel} />;
+      case 'rpcs': return <RpcResultList results={this.rpcResultModel} />;
     }
     return null;
   }
@@ -73,15 +81,23 @@ export default class Page extends React.Component<undefined, State> {
         </header>
         {this.state.alert && <Alert bsStyle="danger">{this.state.alert}</Alert>}
         <Nav bsStyle="tabs" activeKey={this.state.navSelection} onSelect={this.onNav}>
-          <NavItem eventKey="users" title="users">Users</NavItem>
+        <NavItem eventKey="events" title="events">Events</NavItem>
           <NavItem eventKey="rpcs" title="rpcs">RPCs</NavItem>
-          <NavItem eventKey="events" title="events">Events</NavItem>
-          <NavItem eventKey="objects" disabled={true}>Records</NavItem>
+          <NavItem eventKey="records" disabled={true}>Records</NavItem>
+          <NavItem eventKey="users" title="users">Users</NavItem>
           <span className="spacer" />
           {this.state.navSelection === 'events' &&
-            <Button bsStyle="info" onClick={this.onClickPost}>Post&hellip;</Button>}
+            <Button bsStyle="info" onClick={this.onClickPost} disabled={!this.client}>
+              Post&hellip;
+            </Button>}
           {this.state.navSelection === 'events' &&
-            <Button bsStyle="info" onClick={this.onClickSubscribe}>Subscrbe&hellip;</Button>}
+            <Button bsStyle="info" onClick={this.onClickSubscribe} disabled={!this.client}>>
+              Subscribe&hellip;
+            </Button>}
+          {this.state.navSelection === 'rpcs' &&
+            <Button bsStyle="info" onClick={this.onClickCall} disabled={!this.client}>
+              Call&hellip;
+            </Button>}
         </Nav>
         {this.renderMainPanel()}
         <LoginDialog
@@ -99,6 +115,11 @@ export default class Page extends React.Component<undefined, State> {
             show={this.state.showPost}
             onHide={this.onHidePost}
             onPost={this.onPost}
+        />
+        <CallDialog
+            show={this.state.showCall}
+            onHide={this.onHideCall}
+            onCall={this.onCall}
         />
         <Modal show={this.state.showConnecting} onHide={null} dialogClassName="connecting-dialog">
           <Modal.Body>
@@ -140,6 +161,7 @@ export default class Page extends React.Component<undefined, State> {
       console.log('state:', state);
     });
     this.eventModel = new EventModel(this.client);
+    this.rpcResultModel = new RpcResultModel(this.client);
     this.client.login(auth, (success: any, data: any) => {
       if (success) {
         const servers = { ...this.state.servers, [url]: auth };
@@ -194,5 +216,21 @@ export default class Page extends React.Component<undefined, State> {
   private onPost(event: string, content: any) {
     this.setState({ showPost: false });
     this.client.event.emit(event, content);
+  }
+
+  @autobind
+  private onClickCall() {
+    this.setState({ showCall: true });
+  }
+
+  @autobind
+  private onHideCall() {
+    this.setState({ showCall: false });
+  }
+
+  @autobind
+  private onCall(event: string) {
+    this.setState({ showCall: false });
+    // this.eventModel.Call(event, true);
   }
 }

@@ -1869,6 +1869,21 @@ Iterators.NodeList = Iterators.HTMLCollection = Iterators.Array;
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/CallDialog.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "div.modal-dialog.call-dialog {\n  width: 50em; }\n  div.modal-dialog.call-dialog textarea {\n    height: 20em;\n    font-family: 'Source Code Pro', monospace;\n    font-size: 14px; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/EventList.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1908,6 +1923,21 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 // module
 exports.push([module.i, "div.modal-dialog.post-dialog {\n  width: 50em; }\n  div.modal-dialog.post-dialog textarea {\n    height: 20em;\n    font-family: 'Source Code Pro', monospace;\n    font-size: 14px; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/RpcResultList.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".panel.results {\n  display: flex;\n  flex-direction: column;\n  flex: 1; }\n  .panel.results .result-list {\n    flex: 1 0 0;\n    overflow-y: scroll;\n    overflow-x: hidden; }\n    .panel.results .result-list table {\n      width: 100%; }\n      .panel.results .result-list table td, .panel.results .result-list table th {\n        text-align: left;\n        vertical-align: top;\n        padding: 4px; }\n      .panel.results .result-list table tr:nth-child(even) {\n        background-color: #eee; }\n      .panel.results .result-list table th {\n        background-color: #ddd; }\n      .panel.results .result-list table td {\n        font-family: 'Source Code Pro', monospace;\n        font-size: 15px;\n        max-height: 2em;\n        overflow-x: hidden;\n        white-space: pre; }\n      .panel.results .result-list table th.rpc, .panel.results .result-list table td.rpc {\n        padding-right: 8px;\n        width: 5em; }\n      .panel.results .result-list table td.result {\n        width: 90%; }\n  .panel.results header {\n    font-weight: bold;\n    margin: 6px 0 2px 0;\n    background-color: #ddd;\n    padding: 2px 8px; }\n", ""]);
 
 // exports
 
@@ -31735,6 +31765,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/index.js");
 const Immutable = __webpack_require__("./node_modules/immutable/dist/immutable.js");
+/** Model class which stores the event log and the set of subscribed events. */
 class EventModel {
     constructor(client) {
         this.client = client;
@@ -31744,6 +31775,8 @@ class EventModel {
     }
     subscribe(eventId, force) {
         if (this.events.has(eventId) || force) {
+            // Create a separate callback for each subscription, so that we can report which
+            // topic it came from.
             const subscription = {
                 event: eventId,
                 callback: (data) => {
@@ -31797,6 +31830,149 @@ exports.default = EventModel;
 
 
  ;(function register() { /* react-hot-loader/webpack */ if (undefined !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "/home/talin/Projects/peepstream/src/EventModel.ts"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/talin/Projects/peepstream/src/EventModel.ts"); } } })();
+
+/***/ }),
+
+/***/ "./src/RpcResultModel.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const Immutable = __webpack_require__("./node_modules/immutable/dist/immutable.js");
+/** Model class which stores the event log and the set of subscribed events. */
+class RpcResultModel {
+    constructor(client) {
+        this.client = client;
+        this.log = Immutable.List();
+    }
+    call(rpc, args) {
+        this.client.rpc.make(rpc, args, (result) => {
+            this.log = this.log.push({ rpc, result });
+            if (this.onLogChanged) {
+                this.onLogChanged();
+            }
+        });
+    }
+}
+exports.default = RpcResultModel;
+
+
+ ;(function register() { /* react-hot-loader/webpack */ if (undefined !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "/home/talin/Projects/peepstream/src/RpcResultModel.ts"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/talin/Projects/peepstream/src/RpcResultModel.ts"); } } })();
+
+/***/ }),
+
+/***/ "./src/components/CallDialog.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/CallDialog.scss");
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__("./node_modules/style-loader/lib/addStyles.js")(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./CallDialog.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./CallDialog.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/CallDialog.tsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/index.js");
+const React = __webpack_require__(0);
+const react_bootstrap_1 = __webpack_require__("./node_modules/react-bootstrap/es/index.js");
+__webpack_require__("./src/components/CallDialog.scss");
+class CallDialog extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            method: '',
+            content: '',
+            contentError: '',
+            contentValidation: undefined,
+        };
+    }
+    render() {
+        const { method, content, contentError, contentValidation, } = this.state;
+        const contentRef = (el) => { this.contentEdit = el; };
+        return (React.createElement(react_bootstrap_1.Modal, { show: this.props.show, onHide: this.props.onHide, dialogClassName: "call-dialog" },
+            React.createElement(react_bootstrap_1.Modal.Title, null, "Call RPC"),
+            React.createElement(react_bootstrap_1.Modal.Body, null,
+                React.createElement(react_bootstrap_1.FormGroup, { controlId: "event-name" },
+                    React.createElement(react_bootstrap_1.ControlLabel, null, "RPC Name"),
+                    React.createElement(react_bootstrap_1.FormControl, { type: "text", placeholder: "Name of RPC", value: method, onChange: this.onChangeMethod, autoFocus: true })),
+                React.createElement(react_bootstrap_1.FormGroup, { controlId: "event-content", validationState: contentValidation },
+                    React.createElement(react_bootstrap_1.ControlLabel, null, "Content"),
+                    React.createElement(react_bootstrap_1.FormControl, { type: "text", placeholder: "Call data (JSON)", componentClass: "textarea", value: content, onChange: this.onChangeContent, inputRef: contentRef }),
+                    React.createElement(react_bootstrap_1.HelpBlock, null, contentError))),
+            React.createElement(react_bootstrap_1.Modal.Footer, null,
+                React.createElement(react_bootstrap_1.Button, { bsStyle: "default", onClick: this.props.onHide }, "Cancel"),
+                React.createElement(react_bootstrap_1.Button, { bsStyle: "success", onClick: this.onClickCall, disabled: method.length === 0 }, "Call"))));
+    }
+    onChangeMethod(e) {
+        this.setState({ method: e.target.value });
+    }
+    onChangeContent(e) {
+        this.setState({ content: e.target.value, contentValidation: null, contentError: '' });
+    }
+    onClickCall() {
+        try {
+            const json = this.state.content ? JSON.parse(this.state.content) : null;
+            this.props.onCall(this.state.method, json);
+        }
+        catch (e) {
+            const m = /position (\d+)/.exec(e.message);
+            if (m) {
+                const position = parseInt(m[1], 10);
+                this.contentEdit.focus();
+                this.contentEdit.selectionStart = position;
+                this.contentEdit.selectionEnd = position + 1;
+            }
+            this.setState({ contentValidation: 'error', contentError: e.message });
+        }
+    }
+}
+__decorate([
+    autobind
+], CallDialog.prototype, "onChangeMethod", null);
+__decorate([
+    autobind
+], CallDialog.prototype, "onChangeContent", null);
+__decorate([
+    autobind
+], CallDialog.prototype, "onClickCall", null);
+exports.default = CallDialog;
+
+
+ ;(function register() { /* react-hot-loader/webpack */ if (undefined !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "/home/talin/Projects/peepstream/src/components/CallDialog.tsx"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/talin/Projects/peepstream/src/components/CallDialog.tsx"); } } })();
 
 /***/ }),
 
@@ -32137,11 +32313,14 @@ const deepstream = __webpack_require__("./node_modules/deepstream.io-client-js/d
 const React = __webpack_require__(0);
 const react_bootstrap_1 = __webpack_require__("./node_modules/react-bootstrap/es/index.js");
 const EventModel_1 = __webpack_require__("./src/EventModel.ts");
+const RpcResultModel_1 = __webpack_require__("./src/RpcResultModel.ts");
+const CallDialog_1 = __webpack_require__("./src/components/CallDialog.tsx");
 const EventList_1 = __webpack_require__("./src/components/EventList.tsx");
 const LoginDialog_1 = __webpack_require__("./src/components/LoginDialog.tsx");
 __webpack_require__("./src/components/Page.scss");
 const PostDialog_1 = __webpack_require__("./src/components/PostDialog.tsx");
 const PresenceList_1 = __webpack_require__("./src/components/PresenceList.tsx");
+const RpcResultList_1 = __webpack_require__("./src/components/RpcResultList.tsx");
 __webpack_require__("./src/components/styles/bootstrap.scss");
 __webpack_require__("./src/components/styles/controls.scss");
 __webpack_require__("./src/components/styles/dialog.scss");
@@ -32152,15 +32331,17 @@ class Page extends React.Component {
         super();
         this.client = null;
         this.eventModel = null;
+        this.rpcResultModel = null;
         this.state = {
             showLogin: false,
             showConnecting: false,
             showSubscribe: false,
             showPost: false,
+            showCall: false,
             clientState: 'CLOSED',
             clientUrl: '',
             alert: null,
-            navSelection: 'users',
+            navSelection: 'events',
             servers: JSON.parse(window.sessionStorage.getItem('deepstream-servers')) || {},
         };
     }
@@ -32171,6 +32352,7 @@ class Page extends React.Component {
         switch (this.state.navSelection) {
             case 'users': return React.createElement(PresenceList_1.default, { client: this.client });
             case 'events': return React.createElement(EventList_1.default, { events: this.eventModel });
+            case 'rpcs': return React.createElement(RpcResultList_1.default, { results: this.rpcResultModel });
         }
         return null;
     }
@@ -32184,19 +32366,22 @@ class Page extends React.Component {
                 React.createElement("div", { className: classNames('client-state', this.state.clientState.toLowerCase()) }, this.state.clientState)),
             this.state.alert && React.createElement(react_bootstrap_1.Alert, { bsStyle: "danger" }, this.state.alert),
             React.createElement(react_bootstrap_1.Nav, { bsStyle: "tabs", activeKey: this.state.navSelection, onSelect: this.onNav },
-                React.createElement(react_bootstrap_1.NavItem, { eventKey: "users", title: "users" }, "Users"),
-                React.createElement(react_bootstrap_1.NavItem, { eventKey: "rpcs", title: "rpcs" }, "RPCs"),
                 React.createElement(react_bootstrap_1.NavItem, { eventKey: "events", title: "events" }, "Events"),
-                React.createElement(react_bootstrap_1.NavItem, { eventKey: "objects", disabled: true }, "Records"),
+                React.createElement(react_bootstrap_1.NavItem, { eventKey: "rpcs", title: "rpcs" }, "RPCs"),
+                React.createElement(react_bootstrap_1.NavItem, { eventKey: "records", disabled: true }, "Records"),
+                React.createElement(react_bootstrap_1.NavItem, { eventKey: "users", title: "users" }, "Users"),
                 React.createElement("span", { className: "spacer" }),
                 this.state.navSelection === 'events' &&
-                    React.createElement(react_bootstrap_1.Button, { bsStyle: "info", onClick: this.onClickPost }, "Post\u2026"),
+                    React.createElement(react_bootstrap_1.Button, { bsStyle: "info", onClick: this.onClickPost, disabled: !this.client }, "Post\u2026"),
                 this.state.navSelection === 'events' &&
-                    React.createElement(react_bootstrap_1.Button, { bsStyle: "info", onClick: this.onClickSubscribe }, "Subscrbe\u2026")),
+                    React.createElement(react_bootstrap_1.Button, { bsStyle: "info", onClick: this.onClickSubscribe, disabled: !this.client }, "> Subscribe\u2026"),
+                this.state.navSelection === 'rpcs' &&
+                    React.createElement(react_bootstrap_1.Button, { bsStyle: "info", onClick: this.onClickCall, disabled: !this.client }, "Call\u2026")),
             this.renderMainPanel(),
             React.createElement(LoginDialog_1.default, { show: this.state.showLogin, onHide: this.onHideLogIn, onLogin: this.onLogin, servers: this.state.servers }),
             React.createElement(SubscribeDialog_1.default, { show: this.state.showSubscribe, onHide: this.onHideSubscribe, onSubscribe: this.onSubscribe }),
             React.createElement(PostDialog_1.default, { show: this.state.showPost, onHide: this.onHidePost, onPost: this.onPost }),
+            React.createElement(CallDialog_1.default, { show: this.state.showCall, onHide: this.onHideCall, onCall: this.onCall }),
             React.createElement(react_bootstrap_1.Modal, { show: this.state.showConnecting, onHide: null, dialogClassName: "connecting-dialog" },
                 React.createElement(react_bootstrap_1.Modal.Body, null,
                     React.createElement("span", { className: "spinner" }, "Connecting\u2026")))));
@@ -32228,6 +32413,7 @@ class Page extends React.Component {
             console.log('state:', state);
         });
         this.eventModel = new EventModel_1.default(this.client);
+        this.rpcResultModel = new RpcResultModel_1.default(this.client);
         this.client.login(auth, (success, data) => {
             if (success) {
                 const servers = Object.assign({}, this.state.servers, { [url]: auth });
@@ -32268,6 +32454,16 @@ class Page extends React.Component {
         this.setState({ showPost: false });
         this.client.event.emit(event, content);
     }
+    onClickCall() {
+        this.setState({ showCall: true });
+    }
+    onHideCall() {
+        this.setState({ showCall: false });
+    }
+    onCall(event) {
+        this.setState({ showCall: false });
+        // this.eventModel.Call(event, true);
+    }
 }
 __decorate([
     autobind
@@ -32302,6 +32498,15 @@ __decorate([
 __decorate([
     autobind
 ], Page.prototype, "onPost", null);
+__decorate([
+    autobind
+], Page.prototype, "onClickCall", null);
+__decorate([
+    autobind
+], Page.prototype, "onHideCall", null);
+__decorate([
+    autobind
+], Page.prototype, "onCall", null);
 exports.default = Page;
 
 
@@ -32357,7 +32562,7 @@ const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/inde
 const React = __webpack_require__(0);
 const react_bootstrap_1 = __webpack_require__("./node_modules/react-bootstrap/es/index.js");
 __webpack_require__("./src/components/PostDialog.scss");
-class LoginDialog extends React.Component {
+class PostDialog extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -32378,7 +32583,7 @@ class LoginDialog extends React.Component {
                     React.createElement(react_bootstrap_1.FormControl, { type: "text", placeholder: "Name of event", value: event, onChange: this.onChangeEvent, autoFocus: true })),
                 React.createElement(react_bootstrap_1.FormGroup, { controlId: "event-content", validationState: contentValidation },
                     React.createElement(react_bootstrap_1.ControlLabel, null, "Content"),
-                    React.createElement(react_bootstrap_1.FormControl, { type: "text", placeholder: "Name of event", componentClass: "textarea", value: content, onChange: this.onChangeContent, inputRef: contentRef }),
+                    React.createElement(react_bootstrap_1.FormControl, { type: "text", placeholder: "Event content (JSON)", componentClass: "textarea", value: content, onChange: this.onChangeContent, inputRef: contentRef }),
                     React.createElement(react_bootstrap_1.HelpBlock, null, contentError))),
             React.createElement(react_bootstrap_1.Modal.Footer, null,
                 React.createElement(react_bootstrap_1.Button, { bsStyle: "default", onClick: this.props.onHide }, "Cancel"),
@@ -32409,14 +32614,14 @@ class LoginDialog extends React.Component {
 }
 __decorate([
     autobind
-], LoginDialog.prototype, "onChangeEvent", null);
+], PostDialog.prototype, "onChangeEvent", null);
 __decorate([
     autobind
-], LoginDialog.prototype, "onChangeContent", null);
+], PostDialog.prototype, "onChangeContent", null);
 __decorate([
     autobind
-], LoginDialog.prototype, "onClickPost", null);
-exports.default = LoginDialog;
+], PostDialog.prototype, "onClickPost", null);
+exports.default = PostDialog;
 
 
  ;(function register() { /* react-hot-loader/webpack */ if (undefined !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "/home/talin/Projects/peepstream/src/components/PostDialog.tsx"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/talin/Projects/peepstream/src/components/PostDialog.tsx"); } } })();
@@ -32455,6 +32660,91 @@ exports.default = PresenceList;
 
 /***/ }),
 
+/***/ "./src/components/RpcResultList.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/RpcResultList.scss");
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__("./node_modules/style-loader/lib/addStyles.js")(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./RpcResultList.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./RpcResultList.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/RpcResultList.tsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/index.js");
+const React = __webpack_require__(0);
+__webpack_require__("./src/components/RpcResultList.scss");
+class RpcResultList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            results: props.results.log,
+        };
+    }
+    componentWillMount() {
+        this.props.results.onLogChanged = this.onLogChanged;
+    }
+    componentWillUnmount() {
+        this.props.results.onLogChanged = null;
+    }
+    render() {
+        return (React.createElement("section", { className: "results panel" },
+            React.createElement("section", { className: "result-list" },
+                React.createElement("table", { className: "result-table" },
+                    React.createElement("thead", null,
+                        React.createElement("th", { className: "rpc" }, "RPC"),
+                        React.createElement("th", { className: "result" }, "Result")),
+                    React.createElement("tbody", null, this.state.results.map((entry, index) => (React.createElement("tr", { key: index },
+                        React.createElement("td", { className: "rpc" }, entry.rpc),
+                        React.createElement("td", { className: "result" }, entry.result)))))))));
+    }
+    onLogChanged() {
+        this.setState({ results: this.props.results.log });
+    }
+}
+__decorate([
+    autobind
+], RpcResultList.prototype, "onLogChanged", null);
+exports.default = RpcResultList;
+
+
+ ;(function register() { /* react-hot-loader/webpack */ if (undefined !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "/home/talin/Projects/peepstream/src/components/RpcResultList.tsx"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/talin/Projects/peepstream/src/components/RpcResultList.tsx"); } } })();
+
+/***/ }),
+
 /***/ "./src/components/SubscribeDialog.tsx":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -32470,7 +32760,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/index.js");
 const React = __webpack_require__(0);
 const react_bootstrap_1 = __webpack_require__("./node_modules/react-bootstrap/es/index.js");
-class LoginDialog extends React.Component {
+class SubscribeDialog extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -32502,14 +32792,14 @@ class LoginDialog extends React.Component {
 }
 __decorate([
     autobind
-], LoginDialog.prototype, "onChangeEvent", null);
+], SubscribeDialog.prototype, "onChangeEvent", null);
 __decorate([
     autobind
-], LoginDialog.prototype, "onKeyDown", null);
+], SubscribeDialog.prototype, "onKeyDown", null);
 __decorate([
     autobind
-], LoginDialog.prototype, "onClickSubscribe", null);
-exports.default = LoginDialog;
+], SubscribeDialog.prototype, "onClickSubscribe", null);
+exports.default = SubscribeDialog;
 
 
  ;(function register() { /* react-hot-loader/webpack */ if (undefined !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "/home/talin/Projects/peepstream/src/components/SubscribeDialog.tsx"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/talin/Projects/peepstream/src/components/SubscribeDialog.tsx"); } } })();

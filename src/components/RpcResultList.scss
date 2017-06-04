@@ -1,0 +1,52 @@
+.panel.results {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  .result-list {
+    flex: 1 0 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    table {
+      width: 100%;
+      td, th {
+        text-align: left;
+        vertical-align: top;
+        padding: 4px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #eee;
+      }
+
+      th {
+        background-color: #ddd;
+      }
+
+      td {
+        font-family: 'Source Code Pro', monospace;
+        font-size: 15px;
+        max-height: 2em;
+        overflow-x: hidden;
+        white-space: pre;
+      }
+
+      th.rpc, td.rpc {
+        padding-right: 8px;
+        width: 5em;
+      }
+
+      td.result {
+        width: 90%;
+      }
+    }
+  }
+
+  header {
+    font-weight: bold;
+    margin: 6px 0 2px 0;
+    background-color: #ddd;
+    padding: 2px 8px;
+  }
+}

@@ -1,28 +1,28 @@
 import * as autobind from 'autobind-decorator';
 import * as React from 'react';
 import { Button, ControlLabel, FormControl, FormGroup, HelpBlock, Modal } from 'react-bootstrap';
-import './PostDialog.scss';
+import './CallDialog.scss';
 
 interface Props {
   show: boolean;
   onHide: () => void;
-  onPost: (event: string, content: string) => void;
+  onCall: (event: string, content: string) => void;
 }
 
 interface State {
-  event: string;
+  method: string;
   content: string;
   contentError: string;
   contentValidation: 'error' | undefined;
 }
 
-export default class PostDialog extends React.Component<Props, State> {
+export default class CallDialog extends React.Component<Props, State> {
   private contentEdit: any;
 
   constructor() {
     super();
     this.state = {
-      event: '',
+      method: '',
       content: '',
       contentError: '',
       contentValidation: undefined,
@@ -31,7 +31,7 @@ export default class PostDialog extends React.Component<Props, State> {
 
   public render() {
     const {
-      event,
+      method,
       content,
       contentError,
       contentValidation,
@@ -39,16 +39,16 @@ export default class PostDialog extends React.Component<Props, State> {
 
     const contentRef = (el: any) => { this.contentEdit = el; };
     return (
-      <Modal show={this.props.show} onHide={this.props.onHide} dialogClassName="post-dialog">
-        <Modal.Title>Post Event</Modal.Title>
+      <Modal show={this.props.show} onHide={this.props.onHide} dialogClassName="call-dialog">
+        <Modal.Title>Call RPC</Modal.Title>
         <Modal.Body>
           <FormGroup controlId="event-name">
-            <ControlLabel>Event Name</ControlLabel>
+            <ControlLabel>RPC Name</ControlLabel>
             <FormControl
                 type="text"
-                placeholder="Name of event"
-                value={event}
-                onChange={this.onChangeEvent}
+                placeholder="Name of RPC"
+                value={method}
+                onChange={this.onChangeMethod}
                 autoFocus={true}
             />
           </FormGroup>
@@ -56,7 +56,7 @@ export default class PostDialog extends React.Component<Props, State> {
             <ControlLabel>Content</ControlLabel>
             <FormControl
                 type="text"
-                placeholder="Event content (JSON)"
+                placeholder="Call data (JSON)"
                 componentClass="textarea"
                 value={content}
                 onChange={this.onChangeContent}
@@ -71,10 +71,10 @@ export default class PostDialog extends React.Component<Props, State> {
           </Button>
           <Button
             bsStyle="success"
-            onClick={this.onClickPost}
-            disabled={event.length === 0 || content.length === 0}
+            onClick={this.onClickCall}
+            disabled={method.length === 0}
           >
-            Post
+            Call
           </Button>
         </Modal.Footer>
       </Modal>
@@ -82,8 +82,8 @@ export default class PostDialog extends React.Component<Props, State> {
   }
 
   @autobind
-  private onChangeEvent(e: any) {
-    this.setState({ event: e.target.value });
+  private onChangeMethod(e: any) {
+    this.setState({ method: e.target.value });
   }
 
   @autobind
@@ -92,10 +92,10 @@ export default class PostDialog extends React.Component<Props, State> {
   }
 
   @autobind
-  private onClickPost() {
+  private onClickCall() {
     try {
-      const json = JSON.parse(this.state.content);
-      this.props.onPost(this.state.event, json);
+      const json = this.state.content ? JSON.parse(this.state.content) : null;
+      this.props.onCall(this.state.method, json);
     } catch (e) {
       const m = /position (\d+)/.exec(e.message);
       if (m) {

@@ -11,6 +11,7 @@ export interface LogEntry {
   data: any;
 }
 
+/** Model class which stores the event log and the set of subscribed events. */
 export default class EventModel {
   public client: deepstreamIO.Client;
   public events: Immutable.Map<string, Subscription>;
@@ -27,6 +28,8 @@ export default class EventModel {
 
   public subscribe(eventId: string, force?: boolean) {
     if (this.events.has(eventId) || force) {
+      // Create a separate callback for each subscription, so that we can report which
+      // topic it came from.
       const subscription: Subscription = {
         event: eventId,
         callback: (data: any) => {
