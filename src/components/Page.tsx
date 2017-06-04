@@ -3,6 +3,7 @@ import * as classNames from 'classnames';
 import * as deepstream from 'deepstream.io-client-js';
 import * as React from 'react';
 import { Alert, Button, Modal, Nav, NavItem } from 'react-bootstrap';
+import EventModel from '../EventModel';
 import EventList from './EventList';
 import LoginDialog from './LoginDialog';
 import './Page.scss';
@@ -23,14 +24,16 @@ interface State {
 
 export default class Page extends React.Component<undefined, State> {
   private client?: deepstreamIO.Client;
+  private eventModel: EventModel;
 
   constructor() {
     super();
     this.client = null;
+    this.eventModel = null;
     this.state = {
       showLogin: false,
       showConnecting: false,
-      clientState: 'DISCONNECTED',
+      clientState: 'CLOSED',
       clientUrl: '',
       alert: null,
       navSelection: 'users',
@@ -42,7 +45,7 @@ export default class Page extends React.Component<undefined, State> {
     if (!this.client) { return null; }
     switch (this.state.navSelection) {
       case 'users': return <PresenceList client={this.client} />;
-      case 'events': return <EventList client={this.client} />;
+      case 'events': return <EventList events={this.eventModel} />;
     }
     return null;
   }
@@ -112,6 +115,7 @@ export default class Page extends React.Component<undefined, State> {
       this.setState({ clientState: state });
       console.log('state:', state);
     });
+    this.eventModel = new EventModel(this.client);
     this.client.login(auth, (success: any, data: any) => {
       if (success) {
         const servers = { ...this.state.servers, [url]: auth };

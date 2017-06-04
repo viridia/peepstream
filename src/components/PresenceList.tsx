@@ -25,9 +25,11 @@ export default class PresenceList extends React.Component<Props, State> {
 
   public render() {
     return (
-      <ul className="presence-list">
-        {this.state.users.map(user => <li className="user" key={user}>{user}</li>)}
-      </ul>
+      <section className="presence panel">
+        <ul className="presence-list">
+          {this.state.users.map(user => <li className="user" key={user}>{user}</li>)}
+        </ul>
+      </section>
     );
   }
 }

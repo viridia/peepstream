@@ -1,4 +1,12 @@
 .page {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
   > header {
     display: flex;
     align-items: center;
@@ -9,7 +17,8 @@
     .client-state {
       padding: 6px 12px;
       background-color: #ddd;
-      border-radius: 4px;
+      color: #222;
+      border-radius: 2px;
 
       &.reconnecting {
         background-color: #ddb;
@@ -18,7 +27,7 @@
         background-color: #e99;
       }
       &.open {
-        background-color: #cbf;
+        background-color: #edf;
       }
       &.closed {
         background-color: #dbb;
@@ -65,5 +74,10 @@
 
   .alert {
     margin: 6px;
+  }
+
+  .panel {
+    margin: 8px;
+    flex: 1;
   }
 }
