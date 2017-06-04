@@ -9,7 +9,6 @@
     "baseUrl": "./src",
     "experimentalDecorators": true,
     "types": [
-      "deepstream",
       "webpack-env"
     ],
     "typeRoots": [
