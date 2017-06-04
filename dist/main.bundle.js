@@ -1892,7 +1892,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".panel.events {\n  display: flex;\n  flex-direction: column;\n  flex: 1; }\n  .panel.events .event-list {\n    flex: 1 0 0; }\n    .panel.events .event-list table {\n      width: 100%; }\n      .panel.events .event-list table td, .panel.events .event-list table th {\n        text-align: left;\n        padding: 2px; }\n        .panel.events .event-list table td .checkbox, .panel.events .event-list table th .checkbox {\n          margin: 0; }\n      .panel.events .event-list table tr:nth-child(even) {\n        background-color: #eee; }\n      .panel.events .event-list table th {\n        background-color: #ddd; }\n      .panel.events .event-list table td {\n        font-family: 'Source Code Pro', monospace;\n        font-size: 15px; }\n      .panel.events .event-list table td.select {\n        width: 1px; }\n  .panel.events .event-log {\n    flex: 1 0 0;\n    overflow-y: scroll;\n    overflow-x: hidden; }\n    .panel.events .event-log table {\n      width: 100%; }\n      .panel.events .event-log table td, .panel.events .event-log table th {\n        text-align: left;\n        vertical-align: top;\n        padding: 4px; }\n        .panel.events .event-log table td.toggle-pretty, .panel.events .event-log table th.toggle-pretty {\n          padding: 0 2px; }\n      .panel.events .event-log table tr:nth-child(even) {\n        background-color: #eee; }\n      .panel.events .event-log table th {\n        background-color: #ddd; }\n      .panel.events .event-log table td {\n        font-family: 'Source Code Pro', monospace;\n        font-size: 15px;\n        max-height: 2em;\n        overflow-x: hidden;\n        white-space: nowrap; }\n        .panel.events .event-log table td.pretty {\n          white-space: pre; }\n      .panel.events .event-log table td.event {\n        padding-right: 8px;\n        width: 1px; }\n      .panel.events .event-log table td.data {\n        width: 90%; }\n  .panel.events header {\n    font-weight: bold;\n    margin: 6px 0 2px 0;\n    background-color: #ddd;\n    padding: 2px 8px; }\n", ""]);
+exports.push([module.i, ".panel.events {\n  display: flex;\n  flex-direction: column;\n  flex: 1; }\n  .panel.events .event-list {\n    flex: 1 0 0; }\n    .panel.events .event-list table {\n      width: 100%; }\n      .panel.events .event-list table td, .panel.events .event-list table th {\n        text-align: left;\n        padding: 2px; }\n        .panel.events .event-list table td .checkbox, .panel.events .event-list table th .checkbox {\n          margin: 0; }\n      .panel.events .event-list table tr:nth-child(even) {\n        background-color: #eee; }\n      .panel.events .event-list table th {\n        background-color: #ddd; }\n      .panel.events .event-list table td {\n        font-family: 'Source Code Pro', monospace;\n        font-size: 15px; }\n      .panel.events .event-list table th.select, .panel.events .event-list table td.select {\n        width: 7ch; }\n  .panel.events .event-log {\n    flex: 1 0 0;\n    overflow-y: scroll;\n    overflow-x: hidden; }\n    .panel.events .event-log table {\n      width: 100%; }\n      .panel.events .event-log table td, .panel.events .event-log table th {\n        text-align: left;\n        vertical-align: top;\n        padding: 4px; }\n        .panel.events .event-log table td.toggle-pretty, .panel.events .event-log table th.toggle-pretty {\n          padding: 0 2px; }\n      .panel.events .event-log table tr:nth-child(even) {\n        background-color: #eee; }\n      .panel.events .event-log table th {\n        background-color: #ddd; }\n      .panel.events .event-log table td {\n        font-family: 'Source Code Pro', monospace;\n        font-size: 15px;\n        max-height: 2em;\n        overflow-x: hidden;\n        white-space: nowrap; }\n        .panel.events .event-log table td.pretty {\n          white-space: pre; }\n      .panel.events .event-log table td.event {\n        padding-right: 8px;\n        width: 1px; }\n      .panel.events .event-log table td.data {\n        width: 90%; }\n  .panel.events header {\n    font-weight: bold;\n    margin: 6px 0 2px 0;\n    background-color: #ddd;\n    padding: 2px 8px; }\n", ""]);
 
 // exports
 
@@ -32040,7 +32040,7 @@ class EventList extends React.Component {
             React.createElement("section", { className: "event-list" },
                 React.createElement("table", { className: "event-table" },
                     React.createElement("thead", null,
-                        React.createElement("th", { className: "select" }, "\u00A0"),
+                        React.createElement("th", { className: "select" }, "Listen"),
                         React.createElement("th", { className: "event" }, "Event name")),
                     React.createElement("tbody", null, eventNames.map(ev => (React.createElement("tr", { key: ev },
                         React.createElement("td", { className: "select" },
@@ -32369,6 +32369,7 @@ class Page extends React.Component {
                 React.createElement(react_bootstrap_1.NavItem, { eventKey: "events", title: "events" }, "Events"),
                 React.createElement(react_bootstrap_1.NavItem, { eventKey: "rpcs", title: "rpcs" }, "RPCs"),
                 React.createElement(react_bootstrap_1.NavItem, { eventKey: "records", disabled: true }, "Records"),
+                React.createElement(react_bootstrap_1.NavItem, { eventKey: "lists", disabled: true }, "Lists"),
                 React.createElement(react_bootstrap_1.NavItem, { eventKey: "users", title: "users" }, "Users"),
                 React.createElement("span", { className: "spacer" }),
                 this.state.navSelection === 'events' &&
@@ -32460,9 +32461,9 @@ class Page extends React.Component {
     onHideCall() {
         this.setState({ showCall: false });
     }
-    onCall(event) {
+    onCall(rpc, data) {
         this.setState({ showCall: false });
-        // this.eventModel.Call(event, true);
+        this.rpcResultModel.call(rpc, data);
     }
 }
 __decorate([

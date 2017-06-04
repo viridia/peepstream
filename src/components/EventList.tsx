@@ -27,7 +27,7 @@ export default class EventList extends React.Component<Props, undefined> {
         <section className="event-list">
           <table className="event-table">
             <thead>
-              <th className="select">&nbsp;</th>
+              <th className="select">Listen</th>
               <th className="event">Event name</th>
             </thead>
             <tbody>

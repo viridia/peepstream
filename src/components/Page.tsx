@@ -84,6 +84,7 @@ export default class Page extends React.Component<undefined, State> {
         <NavItem eventKey="events" title="events">Events</NavItem>
           <NavItem eventKey="rpcs" title="rpcs">RPCs</NavItem>
           <NavItem eventKey="records" disabled={true}>Records</NavItem>
+          <NavItem eventKey="lists" disabled={true}>Lists</NavItem>
           <NavItem eventKey="users" title="users">Users</NavItem>
           <span className="spacer" />
           {this.state.navSelection === 'events' &&
@@ -229,8 +230,8 @@ export default class Page extends React.Component<undefined, State> {
   }
 
   @autobind
-  private onCall(event: string) {
+  private onCall(rpc: string, data: any) {
     this.setState({ showCall: false });
-    // this.eventModel.Call(event, true);
+    this.rpcResultModel.call(rpc, data);
   }
 }
