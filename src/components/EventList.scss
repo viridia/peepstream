@@ -4,9 +4,9 @@
   flex: 1;
 
   .event-list {
-    flex: 1;
+    flex: 1 0 0;
 
-    .event-table {
+    table {
       width: 100%;
       td, th {
         text-align: left;
@@ -37,13 +37,51 @@
   }
 
   .event-log {
-    flex: 1;
+    flex: 1 0 0;
     overflow-y: scroll;
-  }
+    overflow-x: hidden;
 
-  .event-details {
-    flex: 1;
-    overflow-y: scroll;
+    table {
+      width: 100%;
+      td, th {
+        text-align: left;
+        vertical-align: top;
+        padding: 4px;
+
+        &.toggle-pretty {
+          padding: 0 2px;
+        }
+      }
+
+      tr:nth-child(even) {
+        background-color: #eee;
+      }
+
+      th {
+        background-color: #ddd;
+      }
+
+      td {
+        font-family: 'Source Code Pro', monospace;
+        font-size: 15px;
+        max-height: 2em;
+        overflow-x: hidden;
+        white-space: nowrap;
+
+        &.pretty {
+          white-space: pre;
+        }
+      }
+
+      td.event {
+        padding-right: 8px;
+        width: 1px;
+      }
+
+      td.data {
+        width: 90%;
+      }
+    }
   }
 
   header {

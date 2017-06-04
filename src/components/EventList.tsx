@@ -3,26 +3,15 @@ import * as React from 'react';
 import { Checkbox } from 'react-bootstrap';
 import EventModel from '../EventModel';
 import './EventList.scss';
+import EventLog from './EventLog';
 
 interface Props {
   events: EventModel;
 }
 
-interface State {
-  eventLog: any[];
-}
-
-export default class EventList extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      eventLog: [],
-    };
-  }
-
+export default class EventList extends React.Component<Props, undefined> {
   public componentWillMount() {
     this.props.events.onEventsChanged = this.onEventsChanged;
-    // this.props.client.event.listen('.*', this.onEventChange);
   }
 
   public componentWillUnmount() {
@@ -30,6 +19,7 @@ export default class EventList extends React.Component<Props, State> {
   }
 
   public render() {
+    // TODO: Move each section into separate component, update props independently.
     const eventNames = this.props.events.events.keySeq().toArray();
     eventNames.sort();
     return (
@@ -45,7 +35,7 @@ export default class EventList extends React.Component<Props, State> {
                   <tr key={ev}>
                     <td className="select">
                       <Checkbox
-                          checked={this.props.events.events.get(ev)}
+                          checked={this.props.events.isSubscribed(ev)}
                           data-eventid={ev}
                           onChange={this.onSelectEvent}
                       />
@@ -57,18 +47,14 @@ export default class EventList extends React.Component<Props, State> {
           </table>
         </section>
         <header>Event Log</header>
-        <section className="event-log">aa
-        </section>
-        <header>Event Details</header>
-        <section className="event-details">
-          aa
-        </section>
+        <EventLog events={this.props.events} />
       </section>
     );
   }
 
   @autobind
   private onEventsChanged() {
+    // TODO: change this to update subcomponent.
     this.forceUpdate();
   }
 

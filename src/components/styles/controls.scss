@@ -1,0 +1,19 @@
+.disclosure-triangle {
+  -webkit-appearance: none;
+  appearance: none;
+  border-style: solid;
+  border-color: transparent transparent transparent #777;
+  border-width: 9px 0 9px 14px;
+  transition: transform .2s ease;
+  outline: transparent;
+  cursor: pointer;
+
+  &:focus {
+    border-color: transparent transparent transparent #77a;
+  }
+
+  &:checked {
+    transform: rotate(90deg);
+    border-color: transparent transparent transparent #444;
+  }
+}

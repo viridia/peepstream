@@ -7,14 +7,19 @@ import EventModel from '../EventModel';
 import EventList from './EventList';
 import LoginDialog from './LoginDialog';
 import './Page.scss';
+import PostDialog from './PostDialog';
 import PresenceList from './PresenceList';
 import './styles/bootstrap.scss';
+import './styles/controls.scss';
 import './styles/dialog.scss';
 import './styles/spinner.scss';
+import SubscribeDialog from './SubscribeDialog';
 
 interface State {
   showLogin: boolean;
   showConnecting: boolean;
+  showPost: boolean;
+  showSubscribe: boolean;
   clientState: string;
   clientUrl: string;
   alert?: string;
@@ -33,6 +38,8 @@ export default class Page extends React.Component<undefined, State> {
     this.state = {
       showLogin: false,
       showConnecting: false,
+      showSubscribe: false,
+      showPost: false,
       clientState: 'CLOSED',
       clientUrl: '',
       alert: null,
@@ -54,7 +61,9 @@ export default class Page extends React.Component<undefined, State> {
     return (
       <section className="page">
         <header>
-          {!this.client && <Button bsStyle="primary" onClick={this.onClickLogIn}>Log In...</Button>}
+          {!this.client && (<Button bsStyle="primary" onClick={this.onClickLogIn}>
+            Log In&hellip;
+          </Button>)}
           {this.client &&
             <Button bsStyle="primary" onClick={this.onClickDisconnect}>Disconnect</Button>}
           <div className="client-url">{this.state.clientUrl}</div>
@@ -68,6 +77,11 @@ export default class Page extends React.Component<undefined, State> {
           <NavItem eventKey="rpcs" title="rpcs">RPCs</NavItem>
           <NavItem eventKey="events" title="events">Events</NavItem>
           <NavItem eventKey="objects" disabled={true}>Records</NavItem>
+          <span className="spacer" />
+          {this.state.navSelection === 'events' &&
+            <Button bsStyle="info" onClick={this.onClickPost}>Post&hellip;</Button>}
+          {this.state.navSelection === 'events' &&
+            <Button bsStyle="info" onClick={this.onClickSubscribe}>Subscrbe&hellip;</Button>}
         </Nav>
         {this.renderMainPanel()}
         <LoginDialog
@@ -75,6 +89,16 @@ export default class Page extends React.Component<undefined, State> {
             onHide={this.onHideLogIn}
             onLogin={this.onLogin}
             servers={this.state.servers}
+        />
+        <SubscribeDialog
+            show={this.state.showSubscribe}
+            onHide={this.onHideSubscribe}
+            onSubscribe={this.onSubscribe}
+        />
+        <PostDialog
+            show={this.state.showPost}
+            onHide={this.onHidePost}
+            onPost={this.onPost}
         />
         <Modal show={this.state.showConnecting} onHide={null} dialogClassName="connecting-dialog">
           <Modal.Body>
@@ -139,5 +163,36 @@ export default class Page extends React.Component<undefined, State> {
   private onNav(key: any) {
     this.setState({ navSelection: key });
   }
+
+  @autobind
+  private onClickSubscribe() {
+    this.setState({ showSubscribe: true });
+  }
+
+  @autobind
+  private onHideSubscribe() {
+    this.setState({ showSubscribe: false });
+  }
+
+  @autobind
+  private onSubscribe(event: string) {
+    this.setState({ showSubscribe: false });
+    this.eventModel.subscribe(event, true);
+  }
+
+  @autobind
+  private onClickPost() {
+    this.setState({ showPost: true });
+  }
+
+  @autobind
+  private onHidePost() {
+    this.setState({ showPost: false });
+  }
+
+  @autobind
+  private onPost(event: string, content: any) {
+    this.setState({ showPost: false });
+    this.client.event.emit(event, content);
+  }
 }
-// 192.168.99.100:31002
