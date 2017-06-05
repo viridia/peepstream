@@ -25,7 +25,7 @@ export default class EventList extends React.Component<Props, undefined> {
     return (
       <section className="events panel">
         <section className="event-list">
-          <table className="event-table">
+          <table className="event-table data">
             <thead>
               <th className="select">Listen</th>
               <th className="event">Event name</th>

@@ -1,35 +1,7 @@
 .panel.events {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-
   .event-list {
     flex: 1 0 0;
-
     table {
-      width: 100%;
-      td, th {
-        text-align: left;
-        padding: 2px;
-
-        .checkbox {
-          margin: 0;
-        }
-      }
-
-      tr:nth-child(even) {
-        background-color: #eee;
-      }
-
-      th {
-        background-color: #ddd;
-      }
-
-      td {
-        font-family: 'Source Code Pro', monospace;
-        font-size: 15px;
-      }
-
       th.select, td.select {
         width: 7ch;
       }
@@ -40,34 +12,16 @@
     flex: 1 0 0;
     overflow-y: scroll;
     overflow-x: hidden;
-
     table {
-      width: 100%;
       td, th {
-        text-align: left;
-        vertical-align: top;
-        padding: 4px;
-
         &.toggle-pretty {
           padding: 0 2px;
         }
       }
 
-      tr:nth-child(even) {
-        background-color: #eee;
-      }
-
-      th {
-        background-color: #ddd;
-      }
-
       td {
-        font-family: 'Source Code Pro', monospace;
-        font-size: 15px;
         max-height: 2em;
         overflow-x: hidden;
-        white-space: nowrap;
-
         &.pretty {
           white-space: pre;
         }

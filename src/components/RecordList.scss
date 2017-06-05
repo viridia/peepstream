@@ -1,0 +1,30 @@
+.panel.records {
+  .records-list {
+    flex: 1 0 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    table {
+      td, th {
+        line-height: 25px;
+      }
+
+      th.name, td.name {
+        width: 10ch;
+      }
+
+      td.record, td.record {
+        width: 90%;
+      }
+
+      td {
+        max-height: 2em;
+        overflow-x: hidden;
+
+        button {
+          font-family: sans-serif;
+        }
+      }
+    }
+  }
+}

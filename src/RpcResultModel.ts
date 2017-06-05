@@ -5,7 +5,7 @@ export interface LogEntry {
   result: any;
 }
 
-/** Model class which stores the event log and the set of subscribed events. */
+/** Model class which stores the result log for all RPCs. */
 export default class RpcResultModel {
   public client: deepstreamIO.Client;
   public log: Immutable.List<LogEntry>;

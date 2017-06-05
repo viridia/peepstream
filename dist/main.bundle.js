@@ -1892,7 +1892,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".panel.events {\n  display: flex;\n  flex-direction: column;\n  flex: 1; }\n  .panel.events .event-list {\n    flex: 1 0 0; }\n    .panel.events .event-list table {\n      width: 100%; }\n      .panel.events .event-list table td, .panel.events .event-list table th {\n        text-align: left;\n        padding: 2px; }\n        .panel.events .event-list table td .checkbox, .panel.events .event-list table th .checkbox {\n          margin: 0; }\n      .panel.events .event-list table tr:nth-child(even) {\n        background-color: #eee; }\n      .panel.events .event-list table th {\n        background-color: #ddd; }\n      .panel.events .event-list table td {\n        font-family: 'Source Code Pro', monospace;\n        font-size: 15px; }\n      .panel.events .event-list table th.select, .panel.events .event-list table td.select {\n        width: 7ch; }\n  .panel.events .event-log {\n    flex: 1 0 0;\n    overflow-y: scroll;\n    overflow-x: hidden; }\n    .panel.events .event-log table {\n      width: 100%; }\n      .panel.events .event-log table td, .panel.events .event-log table th {\n        text-align: left;\n        vertical-align: top;\n        padding: 4px; }\n        .panel.events .event-log table td.toggle-pretty, .panel.events .event-log table th.toggle-pretty {\n          padding: 0 2px; }\n      .panel.events .event-log table tr:nth-child(even) {\n        background-color: #eee; }\n      .panel.events .event-log table th {\n        background-color: #ddd; }\n      .panel.events .event-log table td {\n        font-family: 'Source Code Pro', monospace;\n        font-size: 15px;\n        max-height: 2em;\n        overflow-x: hidden;\n        white-space: nowrap; }\n        .panel.events .event-log table td.pretty {\n          white-space: pre; }\n      .panel.events .event-log table td.event {\n        padding-right: 8px;\n        width: 1px; }\n      .panel.events .event-log table td.data {\n        width: 90%; }\n  .panel.events header {\n    font-weight: bold;\n    margin: 6px 0 2px 0;\n    background-color: #ddd;\n    padding: 2px 8px; }\n", ""]);
+exports.push([module.i, ".panel.events .event-list {\n  flex: 1 0 0; }\n  .panel.events .event-list table th.select, .panel.events .event-list table td.select {\n    width: 7ch; }\n\n.panel.events .event-log {\n  flex: 1 0 0;\n  overflow-y: scroll;\n  overflow-x: hidden; }\n  .panel.events .event-log table td.toggle-pretty, .panel.events .event-log table th.toggle-pretty {\n    padding: 0 2px; }\n  .panel.events .event-log table td {\n    max-height: 2em;\n    overflow-x: hidden; }\n    .panel.events .event-log table td.pretty {\n      white-space: pre; }\n  .panel.events .event-log table td.event {\n    padding-right: 8px;\n    width: 1px; }\n  .panel.events .event-log table td.data {\n    width: 90%; }\n\n.panel.events header {\n  font-weight: bold;\n  margin: 6px 0 2px 0;\n  background-color: #ddd;\n  padding: 2px 8px; }\n", ""]);
 
 // exports
 
@@ -1907,7 +1907,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".page {\n  display: flex;\n  flex-direction: column;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0; }\n  .page > header {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: 8px;\n    border-bottom: 1px solid #ccc; }\n    .page > header .client-state {\n      padding: 6px 12px;\n      background-color: #ddd;\n      color: #222;\n      border-radius: 2px; }\n      .page > header .client-state.reconnecting {\n        background-color: #ddb; }\n      .page > header .client-state.error {\n        background-color: #e99; }\n      .page > header .client-state.open {\n        background-color: #edf; }\n      .page > header .client-state.closed {\n        background-color: #dbb; }\n  .page ul.nav {\n    border-bottom: none;\n    margin-top: 4px; }\n    .page ul.nav > li {\n      margin: 4px 8px;\n      border: none; }\n      .page ul.nav > li > a {\n        padding: 0;\n        text-decoration: none;\n        color: #555;\n        border: none !important;\n        background: none; }\n      .page ul.nav > li:hover > a {\n        color: black; }\n      .page ul.nav > li.active {\n        border-bottom: 3px solid #77e; }\n        .page ul.nav > li.active > a {\n          color: black; }\n      .page ul.nav > li.disabled {\n        border-color: #aaa; }\n        .page ul.nav > li.disabled > a {\n          color: #aaa; }\n    .page ul.nav > button {\n      float: right;\n      margin-right: 8px;\n      margin-top: 4px; }\n  .page .alert {\n    margin: 6px; }\n  .page .panel {\n    margin: 8px;\n    flex: 1; }\n", ""]);
+exports.push([module.i, ".page {\n  display: flex;\n  flex-direction: column;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0; }\n  .page > header {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: 8px;\n    border-bottom: 1px solid #ccc; }\n    .page > header .client-state {\n      padding: 6px 12px;\n      background-color: #ddd;\n      color: #222;\n      border-radius: 2px; }\n      .page > header .client-state.reconnecting {\n        background-color: #ddb; }\n      .page > header .client-state.error {\n        background-color: #e99; }\n      .page > header .client-state.open {\n        background-color: #edf; }\n      .page > header .client-state.closed {\n        background-color: #dbb; }\n  .page ul.nav {\n    border-bottom: none;\n    margin-top: 4px; }\n    .page ul.nav > li {\n      margin: 4px 8px;\n      border: none; }\n      .page ul.nav > li > a {\n        padding: 0;\n        text-decoration: none;\n        color: #555;\n        border: none !important;\n        background: none; }\n      .page ul.nav > li:hover > a {\n        color: black; }\n      .page ul.nav > li.active {\n        border-bottom: 3px solid #77e; }\n        .page ul.nav > li.active > a {\n          color: black; }\n      .page ul.nav > li.disabled {\n        border-color: #aaa; }\n        .page ul.nav > li.disabled > a {\n          color: #aaa; }\n    .page ul.nav > button {\n      float: right;\n      margin-right: 8px;\n      margin-top: 4px; }\n  .page .alert {\n    margin: 6px; }\n  .page .panel {\n    display: flex;\n    flex-direction: column;\n    margin: 8px;\n    flex: 1; }\n", ""]);
 
 // exports
 
@@ -1929,6 +1929,21 @@ exports.push([module.i, "div.modal-dialog.post-dialog {\n  width: 50em; }\n  div
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/RecordList.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".panel.records .records-list {\n  flex: 1 0 0;\n  overflow-y: scroll;\n  overflow-x: hidden; }\n  .panel.records .records-list table td, .panel.records .records-list table th {\n    line-height: 25px; }\n  .panel.records .records-list table th.name, .panel.records .records-list table td.name {\n    width: 10ch; }\n  .panel.records .records-list table td.record, .panel.records .records-list table td.record {\n    width: 90%; }\n  .panel.records .records-list table td {\n    max-height: 2em;\n    overflow-x: hidden; }\n    .panel.records .records-list table td button {\n      font-family: sans-serif; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/RpcResultList.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1937,7 +1952,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".panel.results {\n  display: flex;\n  flex-direction: column;\n  flex: 1; }\n  .panel.results .result-list {\n    flex: 1 0 0;\n    overflow-y: scroll;\n    overflow-x: hidden; }\n    .panel.results .result-list table {\n      width: 100%; }\n      .panel.results .result-list table td, .panel.results .result-list table th {\n        text-align: left;\n        vertical-align: top;\n        padding: 4px; }\n      .panel.results .result-list table tr:nth-child(even) {\n        background-color: #eee; }\n      .panel.results .result-list table th {\n        background-color: #ddd; }\n      .panel.results .result-list table td {\n        font-family: 'Source Code Pro', monospace;\n        font-size: 15px;\n        max-height: 2em;\n        overflow-x: hidden;\n        white-space: pre; }\n      .panel.results .result-list table th.rpc, .panel.results .result-list table td.rpc {\n        padding-right: 8px;\n        width: 5em; }\n      .panel.results .result-list table td.result {\n        width: 90%; }\n  .panel.results header {\n    font-weight: bold;\n    margin: 6px 0 2px 0;\n    background-color: #ddd;\n    padding: 2px 8px; }\n", ""]);
+exports.push([module.i, ".panel.results .result-list {\n  flex: 1 0 0;\n  overflow-y: scroll;\n  overflow-x: hidden; }\n  .panel.results .result-list table td {\n    max-height: 2em;\n    overflow-x: hidden; }\n  .panel.results .result-list table th.rpc, .panel.results .result-list table td.rpc {\n    padding-right: 8px;\n    width: 5em; }\n  .panel.results .result-list table td.result {\n    width: 90%; }\n", ""]);
 
 // exports
 
@@ -1967,7 +1982,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".disclosure-triangle {\n  -webkit-appearance: none;\n  appearance: none;\n  border-style: solid;\n  border-color: transparent transparent transparent #777;\n  border-width: 9px 0 9px 14px;\n  transition: transform .2s ease;\n  outline: transparent;\n  cursor: pointer; }\n  .disclosure-triangle:focus {\n    border-color: transparent transparent transparent #77a; }\n  .disclosure-triangle:checked {\n    transform: rotate(90deg);\n    border-color: transparent transparent transparent #444; }\n", ""]);
+exports.push([module.i, "input.disclosure-triangle {\n  -webkit-appearance: none;\n  appearance: none;\n  color: #777;\n  transition: transform .2s ease;\n  outline: 0 !important;\n  cursor: pointer;\n  margin: 0;\n  padding: 0;\n  position: relative;\n  top: 1px; }\n  input.disclosure-triangle::after {\n    position: relative;\n    top: -1px;\n    content: \"\\25B6\";\n    font-size: 18px;\n    padding: 0 3px 0 6px; }\n  input.disclosure-triangle:focus {\n    color: #77a; }\n  input.disclosure-triangle:checked {\n    transform: rotate(90deg);\n    color: #444; }\n\ntable.data {\n  width: 100%; }\n  table.data td, table.data th {\n    text-align: left;\n    vertical-align: top;\n    padding: 4px; }\n    table.data td .checkbox, table.data th .checkbox {\n      margin: 0; }\n  table.data tr:nth-child(even) {\n    background-color: #eee; }\n  table.data th {\n    background-color: #ddd; }\n  table.data td {\n    font-family: 'Source Code Pro', monospace;\n    font-size: 15px;\n    white-space: pre; }\n", ""]);
 
 // exports
 
@@ -31833,6 +31848,48 @@ exports.default = EventModel;
 
 /***/ }),
 
+/***/ "./src/RecordsModel.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const Immutable = __webpack_require__("./node_modules/immutable/dist/immutable.js");
+/** Model class which stores the records we're observing. */
+class RecordsModel {
+    constructor(client) {
+        this.client = client;
+        this.records = Immutable.Map();
+    }
+    get(name) {
+        if (this.records.has(name)) {
+            return this.records.get(name);
+        }
+        const record = this.client.record.getRecord(name);
+        this.records = this.records.set(name, record);
+        if (this.onRecordsChanged) {
+            this.onRecordsChanged();
+        }
+        return record;
+    }
+    discard(name) {
+        const record = this.records.get(name);
+        if (record) {
+            record.discard();
+            this.records = this.records.delete(name);
+            if (this.onRecordsChanged) {
+                this.onRecordsChanged();
+            }
+        }
+    }
+}
+exports.default = RecordsModel;
+
+
+ ;(function register() { /* react-hot-loader/webpack */ if (undefined !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "/home/talin/Projects/peepstream/src/RecordsModel.ts"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/talin/Projects/peepstream/src/RecordsModel.ts"); } } })();
+
+/***/ }),
+
 /***/ "./src/RpcResultModel.ts":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31840,7 +31897,7 @@ exports.default = EventModel;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 const Immutable = __webpack_require__("./node_modules/immutable/dist/immutable.js");
-/** Model class which stores the event log and the set of subscribed events. */
+/** Model class which stores the result log for all RPCs. */
 class RpcResultModel {
     constructor(client) {
         this.client = client;
@@ -32038,7 +32095,7 @@ class EventList extends React.Component {
         eventNames.sort();
         return (React.createElement("section", { className: "events panel" },
             React.createElement("section", { className: "event-list" },
-                React.createElement("table", { className: "event-table" },
+                React.createElement("table", { className: "event-table data" },
                     React.createElement("thead", null,
                         React.createElement("th", { className: "select" }, "Listen"),
                         React.createElement("th", { className: "event" }, "Event name")),
@@ -32107,7 +32164,7 @@ class EventLog extends React.Component {
     }
     render() {
         return (React.createElement("section", { className: "event-log" },
-            React.createElement("table", { className: "event-log-table" },
+            React.createElement("table", { className: "event-log-table data" },
                 React.createElement("tbody", null, this.props.events.eventLog.map((entry) => (React.createElement(EventLogEntry_1.default, { entry: entry })))))));
     }
     onEventLogChanged() {
@@ -32166,6 +32223,68 @@ exports.default = EventLogEntry;
 
 
  ;(function register() { /* react-hot-loader/webpack */ if (undefined !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "/home/talin/Projects/peepstream/src/components/EventLogEntry.tsx"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/talin/Projects/peepstream/src/components/EventLogEntry.tsx"); } } })();
+
+/***/ }),
+
+/***/ "./src/components/GetStringDialog.tsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/index.js");
+const React = __webpack_require__(0);
+const react_bootstrap_1 = __webpack_require__("./node_modules/react-bootstrap/es/index.js");
+class SubscribeDialog extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            value: '',
+        };
+    }
+    render() {
+        const { title, label, placeholder, confirm, show, onHide, } = this.props;
+        return (React.createElement(react_bootstrap_1.Modal, { show: show, onHide: onHide },
+            React.createElement(react_bootstrap_1.Modal.Title, null, title),
+            React.createElement(react_bootstrap_1.Modal.Body, null,
+                React.createElement(react_bootstrap_1.FormGroup, { controlId: "event-name" },
+                    React.createElement(react_bootstrap_1.ControlLabel, null, label),
+                    React.createElement(react_bootstrap_1.FormControl, { type: "text", placeholder: placeholder, value: this.state.value, onChange: this.onChangeValue, onKeyDown: this.onKeyDown, autoFocus: true }))),
+            React.createElement(react_bootstrap_1.Modal.Footer, null,
+                React.createElement(react_bootstrap_1.Button, { bsStyle: "default", onClick: onHide }, "Cancel"),
+                React.createElement(react_bootstrap_1.Button, { bsStyle: "success", onClick: this.onClickSubscribe, disabled: this.state.value.length === 0 }, confirm))));
+    }
+    onChangeValue(e) {
+        this.setState({ value: e.target.value });
+    }
+    onKeyDown(e) {
+        if (e.keyCode === 13 && this.state.value.length > 0) {
+            this.onClickSubscribe();
+        }
+    }
+    onClickSubscribe() {
+        this.props.onDone(this.state.value);
+    }
+}
+__decorate([
+    autobind
+], SubscribeDialog.prototype, "onChangeValue", null);
+__decorate([
+    autobind
+], SubscribeDialog.prototype, "onKeyDown", null);
+__decorate([
+    autobind
+], SubscribeDialog.prototype, "onClickSubscribe", null);
+exports.default = SubscribeDialog;
+
+
+ ;(function register() { /* react-hot-loader/webpack */ if (undefined !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "/home/talin/Projects/peepstream/src/components/GetStringDialog.tsx"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/talin/Projects/peepstream/src/components/GetStringDialog.tsx"); } } })();
 
 /***/ }),
 
@@ -32313,24 +32432,35 @@ const deepstream = __webpack_require__("./node_modules/deepstream.io-client-js/d
 const React = __webpack_require__(0);
 const react_bootstrap_1 = __webpack_require__("./node_modules/react-bootstrap/es/index.js");
 const EventModel_1 = __webpack_require__("./src/EventModel.ts");
+const RecordsModel_1 = __webpack_require__("./src/RecordsModel.ts");
 const RpcResultModel_1 = __webpack_require__("./src/RpcResultModel.ts");
 const CallDialog_1 = __webpack_require__("./src/components/CallDialog.tsx");
 const EventList_1 = __webpack_require__("./src/components/EventList.tsx");
+const GetStringDialog_1 = __webpack_require__("./src/components/GetStringDialog.tsx");
 const LoginDialog_1 = __webpack_require__("./src/components/LoginDialog.tsx");
 __webpack_require__("./src/components/Page.scss");
 const PostDialog_1 = __webpack_require__("./src/components/PostDialog.tsx");
 const PresenceList_1 = __webpack_require__("./src/components/PresenceList.tsx");
+const RecordList_1 = __webpack_require__("./src/components/RecordList.tsx");
 const RpcResultList_1 = __webpack_require__("./src/components/RpcResultList.tsx");
 __webpack_require__("./src/components/styles/bootstrap.scss");
 __webpack_require__("./src/components/styles/controls.scss");
 __webpack_require__("./src/components/styles/dialog.scss");
 __webpack_require__("./src/components/styles/spinner.scss");
-const SubscribeDialog_1 = __webpack_require__("./src/components/SubscribeDialog.tsx");
+var NavSelection;
+(function (NavSelection) {
+    NavSelection[NavSelection["EVENTS"] = 0] = "EVENTS";
+    NavSelection[NavSelection["RPCS"] = 1] = "RPCS";
+    NavSelection[NavSelection["RECORDS"] = 2] = "RECORDS";
+    NavSelection[NavSelection["LISTS"] = 3] = "LISTS";
+    NavSelection[NavSelection["USERS"] = 4] = "USERS";
+})(NavSelection || (NavSelection = {}));
 class Page extends React.Component {
     constructor() {
         super();
         this.client = null;
         this.eventModel = null;
+        this.recordsModel = null;
         this.rpcResultModel = null;
         this.state = {
             showLogin: false,
@@ -32338,10 +32468,12 @@ class Page extends React.Component {
             showSubscribe: false,
             showPost: false,
             showCall: false,
+            showGetRecord: false,
+            showGetList: false,
             clientState: 'CLOSED',
             clientUrl: '',
             alert: null,
-            navSelection: 'events',
+            navSelection: NavSelection.EVENTS,
             servers: JSON.parse(window.sessionStorage.getItem('deepstream-servers')) || {},
         };
     }
@@ -32350,13 +32482,16 @@ class Page extends React.Component {
             return null;
         }
         switch (this.state.navSelection) {
-            case 'users': return React.createElement(PresenceList_1.default, { client: this.client });
-            case 'events': return React.createElement(EventList_1.default, { events: this.eventModel });
-            case 'rpcs': return React.createElement(RpcResultList_1.default, { results: this.rpcResultModel });
+            case NavSelection.USERS: return React.createElement(PresenceList_1.default, { client: this.client });
+            case NavSelection.EVENTS: return React.createElement(EventList_1.default, { events: this.eventModel });
+            case NavSelection.RPCS: return React.createElement(RpcResultList_1.default, { results: this.rpcResultModel });
+            case NavSelection.RECORDS: return React.createElement(RecordList_1.default, { records: this.recordsModel });
+            case NavSelection.LISTS: return React.createElement("span", null, "Not implemented yet!");
         }
         return null;
     }
     render() {
+        const disabled = !this.client;
         return (React.createElement("section", { className: "page" },
             React.createElement("header", null,
                 !this.client && (React.createElement(react_bootstrap_1.Button, { bsStyle: "primary", onClick: this.onClickLogIn }, "Log In\u2026")),
@@ -32366,21 +32501,27 @@ class Page extends React.Component {
                 React.createElement("div", { className: classNames('client-state', this.state.clientState.toLowerCase()) }, this.state.clientState)),
             this.state.alert && React.createElement(react_bootstrap_1.Alert, { bsStyle: "danger" }, this.state.alert),
             React.createElement(react_bootstrap_1.Nav, { bsStyle: "tabs", activeKey: this.state.navSelection, onSelect: this.onNav },
-                React.createElement(react_bootstrap_1.NavItem, { eventKey: "events", title: "events" }, "Events"),
-                React.createElement(react_bootstrap_1.NavItem, { eventKey: "rpcs", title: "rpcs" }, "RPCs"),
-                React.createElement(react_bootstrap_1.NavItem, { eventKey: "records", disabled: true }, "Records"),
-                React.createElement(react_bootstrap_1.NavItem, { eventKey: "lists", disabled: true }, "Lists"),
-                React.createElement(react_bootstrap_1.NavItem, { eventKey: "users", title: "users" }, "Users"),
+                React.createElement(react_bootstrap_1.NavItem, { eventKey: NavSelection.EVENTS, disabled: disabled }, "Events"),
+                React.createElement(react_bootstrap_1.NavItem, { eventKey: NavSelection.RPCS, disabled: disabled }, "RPCs"),
+                React.createElement(react_bootstrap_1.NavItem, { eventKey: NavSelection.RECORDS, disabled: disabled }, "Records"),
+                React.createElement(react_bootstrap_1.NavItem, { eventKey: NavSelection.LISTS, disabled: disabled }, "Lists"),
+                React.createElement(react_bootstrap_1.NavItem, { eventKey: NavSelection.USERS, disabled: disabled }, "Users"),
                 React.createElement("span", { className: "spacer" }),
-                this.state.navSelection === 'events' &&
+                this.state.navSelection === NavSelection.EVENTS &&
                     React.createElement(react_bootstrap_1.Button, { bsStyle: "info", onClick: this.onClickPost, disabled: !this.client }, "Post\u2026"),
-                this.state.navSelection === 'events' &&
+                this.state.navSelection === NavSelection.EVENTS &&
                     React.createElement(react_bootstrap_1.Button, { bsStyle: "info", onClick: this.onClickSubscribe, disabled: !this.client }, "> Subscribe\u2026"),
-                this.state.navSelection === 'rpcs' &&
-                    React.createElement(react_bootstrap_1.Button, { bsStyle: "info", onClick: this.onClickCall, disabled: !this.client }, "Call\u2026")),
+                this.state.navSelection === NavSelection.RPCS &&
+                    React.createElement(react_bootstrap_1.Button, { bsStyle: "info", onClick: this.onClickCall, disabled: !this.client }, "Call\u2026"),
+                this.state.navSelection === NavSelection.RECORDS &&
+                    React.createElement(react_bootstrap_1.Button, { bsStyle: "info", onClick: this.onClickGetRecord, disabled: !this.client }, "Get Record\u2026"),
+                this.state.navSelection === NavSelection.LISTS &&
+                    React.createElement(react_bootstrap_1.Button, { bsStyle: "info", onClick: this.onClickGetList, disabled: !this.client }, "Get List\u2026")),
             this.renderMainPanel(),
             React.createElement(LoginDialog_1.default, { show: this.state.showLogin, onHide: this.onHideLogIn, onLogin: this.onLogin, servers: this.state.servers }),
-            React.createElement(SubscribeDialog_1.default, { show: this.state.showSubscribe, onHide: this.onHideSubscribe, onSubscribe: this.onSubscribe }),
+            React.createElement(GetStringDialog_1.default, { show: this.state.showSubscribe, title: "Subscribe to event", label: "Event Name", placeholder: "Name of event", confirm: "Subscribe", onHide: this.onHideSubscribe, onDone: this.onSubscribe }),
+            React.createElement(GetStringDialog_1.default, { show: this.state.showGetRecord, title: "Get Record", label: "Record Name", placeholder: "ID of record", confirm: "Get", onHide: this.onHideGetRecord, onDone: this.onGetRecord }),
+            React.createElement(GetStringDialog_1.default, { show: this.state.showGetList, title: "Get List", label: "List Name", placeholder: "ID of List", confirm: "Get", onHide: this.onHideGetList, onDone: this.onGetList }),
             React.createElement(PostDialog_1.default, { show: this.state.showPost, onHide: this.onHidePost, onPost: this.onPost }),
             React.createElement(CallDialog_1.default, { show: this.state.showCall, onHide: this.onHideCall, onCall: this.onCall }),
             React.createElement(react_bootstrap_1.Modal, { show: this.state.showConnecting, onHide: null, dialogClassName: "connecting-dialog" },
@@ -32414,6 +32555,7 @@ class Page extends React.Component {
             console.log('state:', state);
         });
         this.eventModel = new EventModel_1.default(this.client);
+        this.recordsModel = new RecordsModel_1.default(this.client);
         this.rpcResultModel = new RpcResultModel_1.default(this.client);
         this.client.login(auth, (success, data) => {
             if (success) {
@@ -32465,6 +32607,26 @@ class Page extends React.Component {
         this.setState({ showCall: false });
         this.rpcResultModel.call(rpc, data);
     }
+    onClickGetRecord() {
+        this.setState({ showGetRecord: true });
+    }
+    onHideGetRecord() {
+        this.setState({ showGetRecord: false });
+    }
+    onGetRecord(record) {
+        this.setState({ showGetRecord: false });
+        this.recordsModel.get(record);
+    }
+    onClickGetList() {
+        this.setState({ showGetList: true });
+    }
+    onHideGetList() {
+        this.setState({ showGetList: false });
+    }
+    onGetList(record) {
+        this.setState({ showGetList: false });
+        // this.rpcResultModel.call(rpc, data);
+    }
 }
 __decorate([
     autobind
@@ -32508,6 +32670,24 @@ __decorate([
 __decorate([
     autobind
 ], Page.prototype, "onCall", null);
+__decorate([
+    autobind
+], Page.prototype, "onClickGetRecord", null);
+__decorate([
+    autobind
+], Page.prototype, "onHideGetRecord", null);
+__decorate([
+    autobind
+], Page.prototype, "onGetRecord", null);
+__decorate([
+    autobind
+], Page.prototype, "onClickGetList", null);
+__decorate([
+    autobind
+], Page.prototype, "onHideGetList", null);
+__decorate([
+    autobind
+], Page.prototype, "onGetList", null);
 exports.default = Page;
 
 
@@ -32661,6 +32841,155 @@ exports.default = PresenceList;
 
 /***/ }),
 
+/***/ "./src/components/RecordList.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/RecordList.scss");
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__("./node_modules/style-loader/lib/addStyles.js")(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./RecordList.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./RecordList.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/RecordList.tsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/index.js");
+const React = __webpack_require__(0);
+__webpack_require__("./src/components/RecordList.scss");
+const RecordRow_1 = __webpack_require__("./src/components/RecordRow.tsx");
+class RecordList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            records: props.records.records,
+        };
+    }
+    componentWillMount() {
+        this.props.records.onRecordsChanged = this.onRecordsChanged;
+    }
+    componentWillUnmount() {
+        this.props.records.onRecordsChanged = null;
+    }
+    render() {
+        return (React.createElement("section", { className: "records panel" },
+            React.createElement("section", { className: "records-list" },
+                React.createElement("table", { className: "records-table data" },
+                    React.createElement("thead", null,
+                        React.createElement("th", { className: "name" }, "Name"),
+                        React.createElement("th", { className: "record" }, "Record"),
+                        React.createElement("th", null),
+                        React.createElement("th", null),
+                        React.createElement("th", null)),
+                    React.createElement("tbody", null, this.state.records.sort().map((r) => (React.createElement(RecordRow_1.default, { key: r.name, record: r }))))))));
+    }
+    onRecordsChanged() {
+        this.setState({ records: this.props.records.records });
+    }
+}
+__decorate([
+    autobind
+], RecordList.prototype, "onRecordsChanged", null);
+exports.default = RecordList;
+
+
+ ;(function register() { /* react-hot-loader/webpack */ if (undefined !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "/home/talin/Projects/peepstream/src/components/RecordList.tsx"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/talin/Projects/peepstream/src/components/RecordList.tsx"); } } })();
+
+/***/ }),
+
+/***/ "./src/components/RecordRow.tsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/index.js");
+const React = __webpack_require__(0);
+const react_bootstrap_1 = __webpack_require__("./node_modules/react-bootstrap/es/index.js");
+class RecordRow extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: props.record.get(),
+        };
+    }
+    componentWillMount() {
+        this.props.record.subscribe(this.onRecordChanged);
+    }
+    componentWillUnmount() {
+        this.props.record.unsubscribe(this.onRecordChanged);
+    }
+    render() {
+        const { record } = this.props;
+        return (React.createElement("tr", null,
+            React.createElement("td", { className: "name" }, record.name),
+            React.createElement("td", { className: "record" },
+                React.createElement("input", { type: "checkbox", className: "disclosure-triangle", checked: false, onChange: null }),
+                JSON.stringify(record.get(), null, 2)),
+            React.createElement("td", null,
+                React.createElement(react_bootstrap_1.Button, { bsStyle: "primary", bsSize: "xsmall", onClick: this.onClickDiscard }, "Edit\u2026")),
+            React.createElement("td", null,
+                React.createElement(react_bootstrap_1.Button, { bsStyle: "primary", bsSize: "xsmall", onClick: this.onClickDiscard }, "Discard")),
+            React.createElement("td", null,
+                React.createElement(react_bootstrap_1.Button, { bsStyle: "primary", bsSize: "xsmall", onClick: this.onClickDiscard }, "Delete"))));
+    }
+    onRecordChanged(data) {
+        this.setState({ data });
+    }
+    onClickDiscard(data) {
+        // this.setState({ data });
+    }
+}
+__decorate([
+    autobind
+], RecordRow.prototype, "onRecordChanged", null);
+__decorate([
+    autobind
+], RecordRow.prototype, "onClickDiscard", null);
+exports.default = RecordRow;
+
+
+ ;(function register() { /* react-hot-loader/webpack */ if (undefined !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "/home/talin/Projects/peepstream/src/components/RecordRow.tsx"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/talin/Projects/peepstream/src/components/RecordRow.tsx"); } } })();
+
+/***/ }),
+
 /***/ "./src/components/RpcResultList.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -32724,7 +33053,7 @@ class RpcResultList extends React.Component {
     render() {
         return (React.createElement("section", { className: "results panel" },
             React.createElement("section", { className: "result-list" },
-                React.createElement("table", { className: "result-table" },
+                React.createElement("table", { className: "result-table data" },
                     React.createElement("thead", null,
                         React.createElement("th", { className: "rpc" }, "RPC"),
                         React.createElement("th", { className: "result" }, "Result")),
@@ -32743,67 +33072,6 @@ exports.default = RpcResultList;
 
 
  ;(function register() { /* react-hot-loader/webpack */ if (undefined !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "/home/talin/Projects/peepstream/src/components/RpcResultList.tsx"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/talin/Projects/peepstream/src/components/RpcResultList.tsx"); } } })();
-
-/***/ }),
-
-/***/ "./src/components/SubscribeDialog.tsx":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/index.js");
-const React = __webpack_require__(0);
-const react_bootstrap_1 = __webpack_require__("./node_modules/react-bootstrap/es/index.js");
-class SubscribeDialog extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            event: '',
-        };
-    }
-    render() {
-        return (React.createElement(react_bootstrap_1.Modal, { show: this.props.show, onHide: this.props.onHide },
-            React.createElement(react_bootstrap_1.Modal.Title, null, "Subscribe to Event"),
-            React.createElement(react_bootstrap_1.Modal.Body, null,
-                React.createElement(react_bootstrap_1.FormGroup, { controlId: "event-name" },
-                    React.createElement(react_bootstrap_1.ControlLabel, null, "Event Name"),
-                    React.createElement(react_bootstrap_1.FormControl, { type: "event", placeholder: "Name of event", value: this.state.event, onChange: this.onChangeEvent, onKeyDown: this.onKeyDown, autoFocus: true }))),
-            React.createElement(react_bootstrap_1.Modal.Footer, null,
-                React.createElement(react_bootstrap_1.Button, { bsStyle: "default", onClick: this.props.onHide }, "Cancel"),
-                React.createElement(react_bootstrap_1.Button, { bsStyle: "success", onClick: this.onClickSubscribe, disabled: this.state.event.length === 0 }, "Subscribe"))));
-    }
-    onChangeEvent(e) {
-        this.setState({ event: e.target.value });
-    }
-    onKeyDown(e) {
-        if (e.keyCode === 13 && this.state.event.length > 0) {
-            this.onClickSubscribe();
-        }
-    }
-    onClickSubscribe() {
-        this.props.onSubscribe(this.state.event);
-    }
-}
-__decorate([
-    autobind
-], SubscribeDialog.prototype, "onChangeEvent", null);
-__decorate([
-    autobind
-], SubscribeDialog.prototype, "onKeyDown", null);
-__decorate([
-    autobind
-], SubscribeDialog.prototype, "onClickSubscribe", null);
-exports.default = SubscribeDialog;
-
-
- ;(function register() { /* react-hot-loader/webpack */ if (undefined !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "/home/talin/Projects/peepstream/src/components/SubscribeDialog.tsx"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/talin/Projects/peepstream/src/components/SubscribeDialog.tsx"); } } })();
 
 /***/ }),
 

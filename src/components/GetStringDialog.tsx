@@ -4,49 +4,61 @@ import { Button, ControlLabel, FormControl, FormGroup, Modal } from 'react-boots
 
 interface Props {
   show: boolean;
+  title: string;
+  label: string;
+  placeholder: string;
+  confirm: string;
   onHide: () => void;
-  onSubscribe: (event: string) => void;
+  onDone: (event: string) => void;
 }
 
 interface State {
-  event: string;
+  value: string;
 }
 
-export default class GetStringDialog extends React.Component<Props, State> {
+export default class SubscribeDialog extends React.Component<Props, State> {
   constructor() {
     super();
     this.state = {
-      event: '',
+      value: '',
     };
   }
 
   public render() {
+    const {
+      title,
+      label,
+      placeholder,
+      confirm,
+      show,
+      onHide,
+    } = this.props;
     return (
-      <Modal show={this.props.show} onHide={this.props.onHide}>
-        <Modal.Title>Subscribe to Event</Modal.Title>
+      <Modal show={show} onHide={onHide}>
+        <Modal.Title>{title}</Modal.Title>
         <Modal.Body>
           <FormGroup controlId="event-name">
-            <ControlLabel>Event Name</ControlLabel>
+            <ControlLabel>{label}</ControlLabel>
             <FormControl
-                type="event"
-                placeholder="Name of event"
-                value={this.state.event}
-                onChange={this.onChangeEvent}
+                type="text"
+                placeholder={placeholder}
+                value={this.state.value}
+                onChange={this.onChangeValue}
                 onKeyDown={this.onKeyDown}
                 autoFocus={true}
             />
           </FormGroup>
         </Modal.Body>
         <Modal.Footer>
-          <Button bsStyle="default" onClick={this.props.onHide}>
+          <Button bsStyle="default" onClick={onHide}>
             Cancel
           </Button>
           <Button
             bsStyle="success"
             onClick={this.onClickSubscribe}
-            disabled={this.state.event.length === 0}
+            disabled={this.state.value.length === 0}
           >
-            Subscribe
+            {confirm}
           </Button>
         </Modal.Footer>
       </Modal>
@@ -54,19 +66,19 @@ export default class GetStringDialog extends React.Component<Props, State> {
   }
 
   @autobind
-  private onChangeEvent(e: any) {
-    this.setState({ event: e.target.value });
+  private onChangeValue(e: any) {
+    this.setState({ value: e.target.value });
   }
 
   @autobind
   private onKeyDown(e: any) {
-    if (e.keyCode === 13 && this.state.event.length > 0) {
+    if (e.keyCode === 13 && this.state.value.length > 0) {
       this.onClickSubscribe();
     }
   }
 
   @autobind
   private onClickSubscribe() {
-    this.props.onSubscribe(this.state.event);
+    this.props.onDone(this.state.value);
   }
 }

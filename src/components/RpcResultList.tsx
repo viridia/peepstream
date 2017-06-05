@@ -32,7 +32,7 @@ export default class RpcResultList extends React.Component<Props, State> {
     return (
       <section className="results panel">
         <section className="result-list">
-          <table className="result-table">
+          <table className="result-table data">
             <thead>
               <th className="rpc">RPC</th>
               <th className="result">Result</th>

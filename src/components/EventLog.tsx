@@ -32,7 +32,7 @@ export default class EventLog extends React.Component<Props, State> {
   public render() {
     return (
       <section className="event-log">
-        <table className="event-log-table">
+        <table className="event-log-table data">
           <tbody>
             {this.props.events.eventLog.map((entry: LogEntry) => (<EventLogEntry entry={entry} />))}
           </tbody>
