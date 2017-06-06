@@ -1,0 +1,21 @@
+div.modal-dialog.record-edit-dialog {
+  width: 50em;
+
+  header {
+    margin-bottom: 8px;
+    .name {
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    .value {
+      font-family: 'Source Code Pro', monospace;
+    }
+  }
+
+  textarea {
+    height: 20em;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+  }
+}

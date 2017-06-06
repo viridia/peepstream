@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap';
 
 interface Props {
   record: deepstreamIO.Record;
+  onEdit: (record: deepstreamIO.Record, field: string) => void;
 }
 
 interface State {
@@ -41,7 +42,7 @@ export default class RecordRow extends React.Component<Props, State> {
           {JSON.stringify(record.get(), null, 2)}
         </td>
         <td>
-          <Button bsStyle="primary" bsSize="xsmall" onClick={this.onClickDiscard}>
+          <Button bsStyle="primary" bsSize="xsmall" onClick={this.onClickEdit}>
             Edit&hellip;
           </Button>
         </td>
@@ -62,6 +63,11 @@ export default class RecordRow extends React.Component<Props, State> {
   @autobind
   private onRecordChanged(data: any) {
     this.setState({ data });
+  }
+
+  @autobind
+  private onClickEdit() {
+    this.props.onEdit(this.props.record, '');
   }
 
   @autobind
