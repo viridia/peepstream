@@ -2,9 +2,9 @@
   .records-list {
     flex: 1 0 0;
     overflow-y: scroll;
-    overflow-x: hidden;
 
     table {
+      table-layout: fixed;
       td, th {
         line-height: 25px;
       }
@@ -13,16 +13,23 @@
         width: 10ch;
       }
 
-      td.record, td.record {
-        width: 90%;
-      }
+      td.record {
+        > .data {
+          display: flex;
+          width: 100%;
+          align-items: flex-start;
 
-      td {
-        max-height: 2em;
-        overflow-x: hidden;
+          > .display {
+            overflow-x: hidden;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 0;
+          }
+        }
 
         button {
           font-family: sans-serif;
+          margin-left: 6px;
         }
       }
     }

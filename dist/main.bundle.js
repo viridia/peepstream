@@ -1884,6 +1884,21 @@ exports.push([module.i, "div.modal-dialog.call-dialog {\n  width: 50em; }\n  div
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/Display.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".display {\n  display: flex; }\n  .display > .indent {\n    width: 20px; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/EventList.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1892,7 +1907,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".panel.events .event-list {\n  flex: 1 0 0; }\n  .panel.events .event-list table th.select, .panel.events .event-list table td.select {\n    width: 7ch; }\n\n.panel.events .event-log {\n  flex: 1 0 0;\n  overflow-y: scroll;\n  overflow-x: hidden; }\n  .panel.events .event-log table td.toggle-pretty, .panel.events .event-log table th.toggle-pretty {\n    padding: 0 2px; }\n  .panel.events .event-log table td {\n    max-height: 2em;\n    overflow-x: hidden; }\n    .panel.events .event-log table td.pretty {\n      white-space: pre; }\n  .panel.events .event-log table td.event {\n    padding-right: 8px;\n    width: 1px; }\n  .panel.events .event-log table td.data {\n    width: 90%; }\n\n.panel.events header {\n  font-weight: bold;\n  margin: 6px 0 2px 0;\n  background-color: #ddd;\n  padding: 2px 8px; }\n", ""]);
+exports.push([module.i, ".panel.events .event-list {\n  flex: 1 0 0; }\n  .panel.events .event-list table {\n    table-layout: fixed; }\n    .panel.events .event-list table th.select, .panel.events .event-list table td.select {\n      width: 7ch; }\n\n.panel.events .event-log {\n  flex: 1 0 0;\n  overflow-y: scroll;\n  overflow-x: hidden; }\n  .panel.events .event-log table {\n    table-layout: fixed; }\n    .panel.events .event-log table td.toggle-pretty, .panel.events .event-log table th.toggle-pretty {\n      padding: 0 2px; }\n    .panel.events .event-log table td {\n      max-height: 2em;\n      overflow-x: hidden; }\n      .panel.events .event-log table td.pretty {\n        white-space: pre; }\n    .panel.events .event-log table td.event {\n      padding-right: 8px;\n      width: 1px; }\n    .panel.events .event-log table td.data {\n      width: 90%; }\n\n.panel.events header {\n  font-weight: bold;\n  margin: 6px 0 2px 0;\n  background-color: #ddd;\n  padding: 2px 8px; }\n", ""]);
 
 // exports
 
@@ -1929,6 +1944,21 @@ exports.push([module.i, "div.modal-dialog.post-dialog {\n  width: 50em; }\n  div
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/RecordEditDialog.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "div.modal-dialog.record-edit-dialog {\n  width: 50em; }\n  div.modal-dialog.record-edit-dialog header {\n    margin-bottom: 8px; }\n    div.modal-dialog.record-edit-dialog header .name {\n      font-weight: bold;\n      margin-right: 8px; }\n    div.modal-dialog.record-edit-dialog header .value {\n      font-family: 'Source Code Pro', monospace; }\n  div.modal-dialog.record-edit-dialog textarea {\n    height: 20em;\n    font-family: 'Source Code Pro', monospace;\n    font-size: 14px; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/RecordList.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1937,7 +1967,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".panel.records .records-list {\n  flex: 1 0 0;\n  overflow-y: scroll;\n  overflow-x: hidden; }\n  .panel.records .records-list table td, .panel.records .records-list table th {\n    line-height: 25px; }\n  .panel.records .records-list table th.name, .panel.records .records-list table td.name {\n    width: 10ch; }\n  .panel.records .records-list table td.record, .panel.records .records-list table td.record {\n    width: 90%; }\n  .panel.records .records-list table td {\n    max-height: 2em;\n    overflow-x: hidden; }\n    .panel.records .records-list table td button {\n      font-family: sans-serif; }\n", ""]);
+exports.push([module.i, ".panel.records .records-list {\n  flex: 1 0 0;\n  overflow-y: scroll; }\n  .panel.records .records-list table {\n    table-layout: fixed; }\n    .panel.records .records-list table td, .panel.records .records-list table th {\n      line-height: 25px; }\n    .panel.records .records-list table th.name, .panel.records .records-list table td.name {\n      width: 10ch; }\n    .panel.records .records-list table td.record > .data {\n      display: flex;\n      width: 100%;\n      align-items: flex-start; }\n      .panel.records .records-list table td.record > .data > .display {\n        overflow-x: hidden;\n        flex-grow: 1;\n        flex-shrink: 1;\n        flex-basis: 0; }\n    .panel.records .records-list table td.record button {\n      font-family: sans-serif;\n      margin-left: 6px; }\n", ""]);
 
 // exports
 
@@ -1982,7 +2012,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "input.disclosure-triangle {\n  -webkit-appearance: none;\n  appearance: none;\n  color: #777;\n  transition: transform .2s ease;\n  outline: 0 !important;\n  cursor: pointer;\n  margin: 0;\n  padding: 0;\n  position: relative;\n  top: 1px; }\n  input.disclosure-triangle::after {\n    position: relative;\n    top: -1px;\n    content: \"\\25B6\";\n    font-size: 18px;\n    padding: 0 3px 0 6px; }\n  input.disclosure-triangle:focus {\n    color: #77a; }\n  input.disclosure-triangle:checked {\n    transform: rotate(90deg);\n    color: #444; }\n\ntable.data {\n  width: 100%; }\n  table.data td, table.data th {\n    text-align: left;\n    vertical-align: top;\n    padding: 4px; }\n    table.data td .checkbox, table.data th .checkbox {\n      margin: 0; }\n  table.data tr:nth-child(even) {\n    background-color: #eee; }\n  table.data th {\n    background-color: #ddd; }\n  table.data td {\n    font-family: 'Source Code Pro', monospace;\n    font-size: 15px;\n    white-space: pre; }\n", ""]);
+exports.push([module.i, "input.disclosure-triangle {\n  -webkit-appearance: none;\n  appearance: none;\n  color: #777;\n  transition: transform .2s ease;\n  outline: 0 !important;\n  cursor: pointer;\n  margin: 0;\n  padding: 0;\n  position: relative;\n  height: 20px;\n  width: 20px;\n  top: 1px; }\n  input.disclosure-triangle::after {\n    position: relative;\n    top: -1px;\n    content: \"\\25B6\";\n    font-size: 18px;\n    padding: 0 3px 0 6px; }\n  input.disclosure-triangle:focus {\n    color: #77a; }\n  input.disclosure-triangle:checked {\n    transform: rotate(90deg);\n    color: #444; }\n\ntable.data {\n  width: 100%; }\n  table.data td, table.data th {\n    text-align: left;\n    vertical-align: top;\n    padding: 4px; }\n    table.data td .checkbox, table.data th .checkbox {\n      margin: 0; }\n  table.data tr:nth-child(even) {\n    background-color: #eee; }\n  table.data th {\n    background-color: #ddd; }\n  table.data td {\n    font-family: 'Source Code Pro', monospace;\n    font-size: 15px;\n    white-space: pre; }\n", ""]);
 
 // exports
 
@@ -32033,6 +32063,161 @@ exports.default = CallDialog;
 
 /***/ }),
 
+/***/ "./src/components/DisclosureTriangle.tsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(0);
+/** Control that displays a toggleable triangle that rotates downward when checked. */
+function DisclosureTriangle(props) {
+    const onChange = (ev) => props.onChange(ev.target.checked);
+    return (React.createElement("input", { type: "checkbox", className: "disclosure-triangle", checked: props.checked, onChange: onChange }));
+}
+exports.default = DisclosureTriangle;
+
+
+ ;(function register() { /* react-hot-loader/webpack */ if (undefined !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "/home/talin/Projects/peepstream/src/components/DisclosureTriangle.tsx"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/talin/Projects/peepstream/src/components/DisclosureTriangle.tsx"); } } })();
+
+/***/ }),
+
+/***/ "./src/components/Display.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/Display.scss");
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__("./node_modules/style-loader/lib/addStyles.js")(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./Display.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./Display.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/DisplayObject.tsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/index.js");
+const React = __webpack_require__(0);
+const DisclosureTriangle_1 = __webpack_require__("./src/components/DisclosureTriangle.tsx");
+__webpack_require__("./src/components/Display.scss");
+class DisplayObject extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            expanded: false,
+        };
+    }
+    render() {
+        return (React.createElement("section", { className: "display object" },
+            React.createElement(DisclosureTriangle_1.default, { checked: this.state.expanded, onChange: this.onToggleExpanded }),
+            this.renderContent()));
+    }
+    renderContent() {
+        const prefix = this.props.fieldName ? `${this.props.fieldName}: ` : '';
+        if (this.state.expanded) {
+            if (Array.isArray(this.props.data)) {
+                return (React.createElement("div", { className: "content expanded" },
+                    React.createElement("div", null,
+                        prefix,
+                        "["),
+                    this.props.data.map(this.renderElement),
+                    React.createElement("div", null, "]")));
+            }
+            const names = Object.getOwnPropertyNames(this.props.data);
+            names.sort();
+            return (React.createElement("div", { className: "content expanded" },
+                React.createElement("div", null,
+                    prefix,
+                    '{'),
+                names.map(this.renderField),
+                React.createElement("div", null, "}")));
+        }
+        else {
+            return React.createElement("div", { className: "object-content" },
+                prefix,
+                JSON.stringify(this.props.data));
+        }
+    }
+    renderField(field) {
+        const value = this.props.data[field];
+        if (typeof value === 'object') {
+            const fieldPath = this.props.fieldName ? `${this.props.fieldName}.${field}` : field;
+            return React.createElement(DisplayObject, { data: value, fieldName: field, fieldPath: fieldPath, key: field });
+        }
+        else {
+            return (React.createElement("div", { className: "display primitive", key: field },
+                React.createElement("div", { className: "indent" }),
+                React.createElement("div", { className: "value" },
+                    field,
+                    ": ",
+                    JSON.stringify(value))));
+        }
+    }
+    renderElement(value, index) {
+        if (typeof value === 'object') {
+            const field = `${index}`;
+            const fieldPath = this.props.fieldName ? `${this.props.fieldName}.${index}` : field;
+            return React.createElement(DisplayObject, { data: value, fieldPath: fieldPath, fieldName: field, key: index });
+        }
+        else {
+            return (React.createElement("div", { className: "display primitive", key: index },
+                React.createElement("div", { className: "indent" }),
+                React.createElement("div", { className: "value" },
+                    index,
+                    ": ",
+                    JSON.stringify(value))));
+        }
+    }
+    onToggleExpanded(expanded) {
+        this.setState({ expanded });
+    }
+}
+__decorate([
+    autobind
+], DisplayObject.prototype, "renderField", null);
+__decorate([
+    autobind
+], DisplayObject.prototype, "renderElement", null);
+__decorate([
+    autobind
+], DisplayObject.prototype, "onToggleExpanded", null);
+exports.default = DisplayObject;
+
+
+ ;(function register() { /* react-hot-loader/webpack */ if (undefined !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "/home/talin/Projects/peepstream/src/components/DisplayObject.tsx"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/talin/Projects/peepstream/src/components/DisplayObject.tsx"); } } })();
+
+/***/ }),
+
 /***/ "./src/components/EventList.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -32196,6 +32381,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/index.js");
 const classNames = __webpack_require__("./node_modules/classnames/index.js");
 const React = __webpack_require__(0);
+const DisclosureTriangle_1 = __webpack_require__("./src/components/DisclosureTriangle.tsx");
 class EventLogEntry extends React.Component {
     constructor(props) {
         super(props);
@@ -32209,11 +32395,11 @@ class EventLogEntry extends React.Component {
         return (React.createElement("tr", null,
             React.createElement("td", { className: "event" }, entry.event),
             React.createElement("td", { className: "toggle-pretty" },
-                React.createElement("input", { type: "checkbox", className: "disclosure-triangle", checked: this.state.pretty, onChange: this.onTogglePretty })),
+                React.createElement(DisclosureTriangle_1.default, { checked: this.state.pretty, onChange: this.onTogglePretty })),
             React.createElement("td", { className: classNames('data', { pretty }) }, pretty ? JSON.stringify(entry.data, null, 2) : JSON.stringify(entry.data))));
     }
-    onTogglePretty(ev) {
-        this.setState({ pretty: ev.target.checked });
+    onTogglePretty(pretty) {
+        this.setState({ pretty });
     }
 }
 __decorate([
@@ -32841,6 +33027,133 @@ exports.default = PresenceList;
 
 /***/ }),
 
+/***/ "./src/components/RecordEditDialog.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/RecordEditDialog.scss");
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__("./node_modules/style-loader/lib/addStyles.js")(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./RecordEditDialog.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./RecordEditDialog.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/RecordEditDialog.tsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/index.js");
+const React = __webpack_require__(0);
+const react_bootstrap_1 = __webpack_require__("./node_modules/react-bootstrap/es/index.js");
+__webpack_require__("./src/components/RecordEditDialog.scss");
+class RecordEditDialog extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            content: JSON.stringify(props.content, null, 2),
+            contentError: '',
+            contentValidation: undefined,
+        };
+    }
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.content !== this.props.content) {
+            this.setState({ content: JSON.stringify(nextProps.content, null, 2) });
+        }
+    }
+    render() {
+        const { recordName, fieldName, } = this.props;
+        const { content, contentError, contentValidation, } = this.state;
+        const contentRef = (el) => { this.contentEdit = el; };
+        return (React.createElement(react_bootstrap_1.Modal, { show: this.props.show, onHide: this.props.onHide, dialogClassName: "record-edit-dialog" },
+            React.createElement(react_bootstrap_1.Modal.Title, null, "Edit Record"),
+            React.createElement(react_bootstrap_1.Modal.Body, null,
+                React.createElement("header", null,
+                    React.createElement("span", { className: "name" }, "Record:"),
+                    React.createElement("span", { className: "value" }, recordName)),
+                fieldName && React.createElement("header", null,
+                    React.createElement("span", { className: "name" }, "Field:"),
+                    React.createElement("span", { className: "value" }, fieldName)),
+                React.createElement(react_bootstrap_1.FormGroup, { controlId: "event-content", validationState: contentValidation },
+                    React.createElement(react_bootstrap_1.ControlLabel, null, "Content"),
+                    React.createElement(react_bootstrap_1.FormControl, { type: "text", placeholder: "Event content (JSON)", componentClass: "textarea", value: content, onChange: this.onChangeContent, inputRef: contentRef }),
+                    React.createElement(react_bootstrap_1.HelpBlock, null, contentError))),
+            React.createElement(react_bootstrap_1.Modal.Footer, null,
+                React.createElement(react_bootstrap_1.Button, { bsStyle: "default", onClick: this.props.onHide }, "Cancel"),
+                React.createElement(react_bootstrap_1.Button, { bsStyle: "success", onClick: this.onClickSave, disabled: content.length === 0 }, "Save"))));
+    }
+    onChangeContent(e) {
+        this.setState({ content: e.target.value, contentValidation: null, contentError: '' });
+    }
+    onClickSave() {
+        try {
+            const json = JSON.parse(this.state.content);
+            if (typeof json !== 'object') {
+                this.setState({ contentValidation: 'error', contentError: 'Value must be an object.' });
+            }
+            else if (Array.isArray(json)) {
+                this.setState({
+                    contentValidation: 'error',
+                    contentError: 'Value should not be an array.',
+                });
+            }
+            else {
+                this.props.onSave(this.props.recordName, this.props.fieldName, json);
+            }
+        }
+        catch (e) {
+            const m = /position (\d+)/.exec(e.message);
+            if (m) {
+                const position = parseInt(m[1], 10);
+                this.contentEdit.focus();
+                this.contentEdit.selectionStart = position;
+                this.contentEdit.selectionEnd = position + 1;
+            }
+            this.setState({ contentValidation: 'error', contentError: e.message });
+        }
+    }
+}
+__decorate([
+    autobind
+], RecordEditDialog.prototype, "onChangeContent", null);
+__decorate([
+    autobind
+], RecordEditDialog.prototype, "onClickSave", null);
+exports.default = RecordEditDialog;
+
+
+ ;(function register() { /* react-hot-loader/webpack */ if (undefined !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "/home/talin/Projects/peepstream/src/components/RecordEditDialog.tsx"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/talin/Projects/peepstream/src/components/RecordEditDialog.tsx"); } } })();
+
+/***/ }),
+
 /***/ "./src/components/RecordList.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -32887,6 +33200,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/index.js");
 const React = __webpack_require__(0);
+const RecordEditDialog_1 = __webpack_require__("./src/components/RecordEditDialog.tsx");
 __webpack_require__("./src/components/RecordList.scss");
 const RecordRow_1 = __webpack_require__("./src/components/RecordRow.tsx");
 class RecordList extends React.Component {
@@ -32894,6 +33208,9 @@ class RecordList extends React.Component {
         super(props);
         this.state = {
             records: props.records.records,
+            showEdit: false,
+            recordToEdit: null,
+            fieldToEdit: null,
         };
     }
     componentWillMount() {
@@ -32908,19 +33225,43 @@ class RecordList extends React.Component {
                 React.createElement("table", { className: "records-table data" },
                     React.createElement("thead", null,
                         React.createElement("th", { className: "name" }, "Name"),
-                        React.createElement("th", { className: "record" }, "Record"),
-                        React.createElement("th", null),
-                        React.createElement("th", null),
-                        React.createElement("th", null)),
-                    React.createElement("tbody", null, this.state.records.sort().map((r) => (React.createElement(RecordRow_1.default, { key: r.name, record: r }))))))));
+                        React.createElement("th", { className: "record" }, "Record")),
+                    React.createElement("tbody", null, this.state.records.sort().map((r) => (React.createElement(RecordRow_1.default, { key: r.name, record: r, onEdit: this.onShowEdit })))))),
+            React.createElement(RecordEditDialog_1.default, { show: this.state.showEdit, onHide: this.onHideEdit, onSave: this.onSave, recordName: this.state.recordToEdit && this.state.recordToEdit.name, fieldName: this.state.fieldToEdit, content: this.state.recordToEdit && this.state.recordToEdit.get() })));
     }
     onRecordsChanged() {
         this.setState({ records: this.props.records.records });
+    }
+    onShowEdit(record, fieldName) {
+        this.setState({ showEdit: true, recordToEdit: record, fieldToEdit: fieldName });
+    }
+    onHideEdit() {
+        this.setState({ showEdit: false });
+    }
+    onSave(recordName, fieldName, data) {
+        this.setState({ showEdit: false });
+        if (this.state.recordToEdit) {
+            if (fieldName) {
+                this.state.recordToEdit.set(fieldName, data);
+            }
+            else {
+                this.state.recordToEdit.set(data);
+            }
+        }
     }
 }
 __decorate([
     autobind
 ], RecordList.prototype, "onRecordsChanged", null);
+__decorate([
+    autobind
+], RecordList.prototype, "onShowEdit", null);
+__decorate([
+    autobind
+], RecordList.prototype, "onHideEdit", null);
+__decorate([
+    autobind
+], RecordList.prototype, "onSave", null);
 exports.default = RecordList;
 
 
@@ -32943,6 +33284,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/index.js");
 const React = __webpack_require__(0);
 const react_bootstrap_1 = __webpack_require__("./node_modules/react-bootstrap/es/index.js");
+const DisplayObject_1 = __webpack_require__("./src/components/DisplayObject.tsx");
 class RecordRow extends React.Component {
     constructor(props) {
         super(props);
@@ -32961,17 +33303,17 @@ class RecordRow extends React.Component {
         return (React.createElement("tr", null,
             React.createElement("td", { className: "name" }, record.name),
             React.createElement("td", { className: "record" },
-                React.createElement("input", { type: "checkbox", className: "disclosure-triangle", checked: false, onChange: null }),
-                JSON.stringify(record.get(), null, 2)),
-            React.createElement("td", null,
-                React.createElement(react_bootstrap_1.Button, { bsStyle: "primary", bsSize: "xsmall", onClick: this.onClickDiscard }, "Edit\u2026")),
-            React.createElement("td", null,
-                React.createElement(react_bootstrap_1.Button, { bsStyle: "primary", bsSize: "xsmall", onClick: this.onClickDiscard }, "Discard")),
-            React.createElement("td", null,
-                React.createElement(react_bootstrap_1.Button, { bsStyle: "primary", bsSize: "xsmall", onClick: this.onClickDiscard }, "Delete"))));
+                React.createElement("div", { className: "data" },
+                    React.createElement(DisplayObject_1.default, { data: record.get(), fieldName: "", fieldPath: "" }),
+                    React.createElement(react_bootstrap_1.Button, { bsStyle: "primary", bsSize: "xsmall", onClick: this.onClickEdit }, "Edit\u2026"),
+                    React.createElement(react_bootstrap_1.Button, { bsStyle: "danger", bsSize: "xsmall", onClick: this.onClickDiscard }, "Discard"),
+                    React.createElement(react_bootstrap_1.Button, { bsStyle: "danger", bsSize: "xsmall", onClick: this.onClickDiscard }, "Delete")))));
     }
     onRecordChanged(data) {
         this.setState({ data });
+    }
+    onClickEdit() {
+        this.props.onEdit(this.props.record, '');
     }
     onClickDiscard(data) {
         // this.setState({ data });
@@ -32980,6 +33322,9 @@ class RecordRow extends React.Component {
 __decorate([
     autobind
 ], RecordRow.prototype, "onRecordChanged", null);
+__decorate([
+    autobind
+], RecordRow.prototype, "onClickEdit", null);
 __decorate([
     autobind
 ], RecordRow.prototype, "onClickDiscard", null);

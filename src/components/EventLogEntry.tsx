@@ -2,6 +2,7 @@ import * as autobind from 'autobind-decorator';
 import * as classNames from 'classnames';
 import * as React from 'react';
 import { LogEntry } from '../EventModel';
+import DisclosureTriangle from './DisclosureTriangle';
 
 interface Props {
   entry: LogEntry;
@@ -26,12 +27,7 @@ export default class EventLogEntry extends React.Component<Props, State> {
       <tr>
         <td className="event">{entry.event}</td>
         <td className="toggle-pretty">
-          <input
-              type="checkbox"
-              className="disclosure-triangle"
-              checked={this.state.pretty}
-              onChange={this.onTogglePretty}
-          />
+          <DisclosureTriangle checked={this.state.pretty} onChange={this.onTogglePretty} />
         </td>
         <td className={classNames('data', { pretty })}>
           {pretty ? JSON.stringify(entry.data, null, 2) : JSON.stringify(entry.data)}</td>
@@ -40,7 +36,7 @@ export default class EventLogEntry extends React.Component<Props, State> {
   }
 
   @autobind
-  private onTogglePretty(ev: any) {
-    this.setState({ pretty: ev.target.checked });
+  private onTogglePretty(pretty: boolean) {
+    this.setState({ pretty });
   }
 }

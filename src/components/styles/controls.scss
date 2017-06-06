@@ -8,6 +8,8 @@ input.disclosure-triangle {
   margin: 0;
   padding: 0;
   position: relative;
+  height: 20px;
+  width: 20px;
   top: 1px;
 
   &::after {

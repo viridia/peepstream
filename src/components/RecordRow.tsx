@@ -1,6 +1,7 @@
 import * as autobind from 'autobind-decorator';
 import * as React from 'react';
 import { Button } from 'react-bootstrap';
+import DisplayObject from './DisplayObject';
 
 interface Props {
   record: deepstreamIO.Record;
@@ -33,28 +34,18 @@ export default class RecordRow extends React.Component<Props, State> {
       <tr>
         <td className="name">{record.name}</td>
         <td className="record">
-          <input
-              type="checkbox"
-              className="disclosure-triangle"
-              checked={false}
-              onChange={null}
-          />
-          {JSON.stringify(record.get(), null, 2)}
-        </td>
-        <td>
-          <Button bsStyle="primary" bsSize="xsmall" onClick={this.onClickEdit}>
-            Edit&hellip;
-          </Button>
-        </td>
-        <td>
-          <Button bsStyle="primary" bsSize="xsmall" onClick={this.onClickDiscard}>
-            Discard
-          </Button>
-        </td>
-        <td>
-          <Button bsStyle="primary" bsSize="xsmall" onClick={this.onClickDiscard}>
-            Delete
-          </Button>
+          <div className="data">
+            <DisplayObject data={record.get()} fieldName="" fieldPath="" />
+            <Button bsStyle="primary" bsSize="xsmall" onClick={this.onClickEdit}>
+              Edit&hellip;
+            </Button>
+            <Button bsStyle="danger" bsSize="xsmall" onClick={this.onClickDiscard}>
+              Discard
+            </Button>
+            <Button bsStyle="danger" bsSize="xsmall" onClick={this.onClickDiscard}>
+              Delete
+            </Button>
+          </div>
         </td>
       </tr>
     );

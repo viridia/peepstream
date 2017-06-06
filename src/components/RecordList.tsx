@@ -44,9 +44,6 @@ export default class RecordList extends React.Component<Props, State> {
             <thead>
               <th className="name">Name</th>
               <th className="record">Record</th>
-              <th />
-              <th />
-              <th />
             </thead>
             <tbody>
               {this.state.records.sort().map((r: deepstreamIO.Record) => (
