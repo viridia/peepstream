@@ -18,6 +18,7 @@ interface State {
   contentValidation: 'error' | undefined;
 }
 
+/** Dialog for editing the content of a record. */
 export default class RecordEditDialog extends React.Component<Props, State> {
   private contentEdit: any;
 

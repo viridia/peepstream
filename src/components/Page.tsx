@@ -43,6 +43,7 @@ interface State {
   servers?: { [key: string]: any; };
 }
 
+/** Root element of the application */
 export default class Page extends React.Component<undefined, State> {
   private client?: deepstreamIO.Client;
   private eventModel: EventModel;

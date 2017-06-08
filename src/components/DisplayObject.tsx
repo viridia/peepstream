@@ -13,6 +13,7 @@ interface State {
   expanded: boolean;
 }
 
+/** Displays a JSON object with expandable hierarchy. */
 export default class DisplayObject extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);

@@ -12,6 +12,7 @@ interface State {
   pretty: boolean;
 }
 
+/** A single entry in the event log display. */
 export default class EventLogEntry extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);

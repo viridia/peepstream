@@ -16,6 +16,7 @@ interface State {
   contentValidation: 'error' | undefined;
 }
 
+/** Dialog for posting a deepstream event. */
 export default class PostDialog extends React.Component<Props, State> {
   private contentEdit: any;
 

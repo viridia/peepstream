@@ -9,6 +9,7 @@ interface Props {
   events: EventModel;
 }
 
+/** Displays the list of deepsteam events we are currently watching. */
 export default class EventList extends React.Component<Props, undefined> {
   public componentWillMount() {
     this.props.events.onEventsChanged = this.onEventsChanged;

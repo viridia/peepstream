@@ -12,6 +12,7 @@ interface State {
   results: Immutable.List<LogEntry>;
 }
 
+/** Displays the list of results from RPC calls. */
 export default class RpcResultList extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);

@@ -15,6 +15,7 @@ interface State {
   password: string;
 }
 
+/** Dialog that prompts for the deepstream login info. */
 export default class LoginDialog extends React.Component<Props, State> {
   constructor() {
     super();

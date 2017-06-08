@@ -16,6 +16,7 @@ interface State {
   contentValidation: 'error' | undefined;
 }
 
+/** Dialog for making an RPC call. */
 export default class CallDialog extends React.Component<Props, State> {
   private contentEdit: any;
 

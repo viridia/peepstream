@@ -16,7 +16,8 @@ interface State {
   value: string;
 }
 
-export default class SubscribeDialog extends React.Component<Props, State> {
+/** A generic dialog that prompts for a single string. */
+export default class GetStringDialog extends React.Component<Props, State> {
   constructor() {
     super();
     this.state = {

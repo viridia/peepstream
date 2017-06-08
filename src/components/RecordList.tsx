@@ -17,6 +17,7 @@ interface State {
   fieldToEdit: string;
 }
 
+/** Displays the list of deepstream records we are currently watching. */
 export default class RecordList extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);

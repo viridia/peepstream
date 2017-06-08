@@ -13,6 +13,7 @@ interface State {
   eventLog: Immutable.List<LogEntry>;
 }
 
+/** Displays the log of events which have occurred while we are listening. */
 export default class EventLog extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
