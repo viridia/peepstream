@@ -1967,7 +1967,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".panel.records .records-list {\n  flex: 1 0 0;\n  overflow-y: scroll; }\n  .panel.records .records-list table {\n    table-layout: fixed; }\n    .panel.records .records-list table td, .panel.records .records-list table th {\n      line-height: 25px; }\n    .panel.records .records-list table th.name, .panel.records .records-list table td.name {\n      width: 10ch; }\n    .panel.records .records-list table td.record > .data {\n      display: flex;\n      width: 100%;\n      align-items: flex-start; }\n      .panel.records .records-list table td.record > .data > .display {\n        overflow-x: hidden;\n        flex-grow: 1;\n        flex-shrink: 1;\n        flex-basis: 0; }\n    .panel.records .records-list table td.record button {\n      font-family: sans-serif;\n      margin-left: 6px; }\n", ""]);
+exports.push([module.i, ".panel.records .records-list {\n  flex: 1 0 0;\n  overflow-y: scroll; }\n  .panel.records .records-list table {\n    table-layout: fixed; }\n    .panel.records .records-list table td, .panel.records .records-list table th {\n      line-height: 25px; }\n    .panel.records .records-list table th.name, .panel.records .records-list table td.name {\n      width: 14ch;\n      overflow-x: hidden;\n      text-overflow: ellipsis; }\n    .panel.records .records-list table td.record > .data {\n      display: flex;\n      width: 100%;\n      align-items: flex-start; }\n      .panel.records .records-list table td.record > .data > .display {\n        overflow-x: hidden;\n        flex-grow: 1;\n        flex-shrink: 1;\n        flex-basis: 0; }\n    .panel.records .records-list table td.record button {\n      font-family: sans-serif;\n      margin-left: 6px; }\n", ""]);
 
 // exports
 
@@ -31912,6 +31912,16 @@ class RecordsModel {
             }
         }
     }
+    delete(name) {
+        const record = this.records.get(name);
+        if (record) {
+            record.delete();
+            this.records = this.records.delete(name);
+            if (this.onRecordsChanged) {
+                this.onRecordsChanged();
+            }
+        }
+    }
 }
 exports.default = RecordsModel;
 
@@ -33237,7 +33247,7 @@ class RecordList extends React.Component {
                     React.createElement("thead", null,
                         React.createElement("th", { className: "name" }, "Name"),
                         React.createElement("th", { className: "record" }, "Record")),
-                    React.createElement("tbody", null, this.state.records.sort().map((r) => (React.createElement(RecordRow_1.default, { key: r.name, record: r, onEdit: this.onShowEdit })))))),
+                    React.createElement("tbody", null, this.state.records.sort().map((r) => (React.createElement(RecordRow_1.default, { key: r.name, record: r, records: this.props.records, onEdit: this.onShowEdit })))))),
             React.createElement(RecordEditDialog_1.default, { show: this.state.showEdit, onHide: this.onHideEdit, onSave: this.onSave, recordName: this.state.recordToEdit && this.state.recordToEdit.name, fieldName: this.state.fieldToEdit, content: this.state.recordToEdit && this.state.recordToEdit.get() })));
     }
     onRecordsChanged() {
@@ -33318,7 +33328,7 @@ class RecordRow extends React.Component {
                     React.createElement(DisplayObject_1.default, { data: record.get(), fieldName: "", fieldPath: "" }),
                     React.createElement(react_bootstrap_1.Button, { bsStyle: "primary", bsSize: "xsmall", onClick: this.onClickEdit }, "Edit\u2026"),
                     React.createElement(react_bootstrap_1.Button, { bsStyle: "danger", bsSize: "xsmall", onClick: this.onClickDiscard }, "Discard"),
-                    React.createElement(react_bootstrap_1.Button, { bsStyle: "danger", bsSize: "xsmall", onClick: this.onClickDiscard }, "Delete")))));
+                    React.createElement(react_bootstrap_1.Button, { bsStyle: "danger", bsSize: "xsmall", onClick: this.onClickDelete }, "Delete")))));
     }
     onRecordChanged(data) {
         this.setState({ data });
@@ -33326,8 +33336,11 @@ class RecordRow extends React.Component {
     onClickEdit() {
         this.props.onEdit(this.props.record, '');
     }
-    onClickDiscard(data) {
-        // this.setState({ data });
+    onClickDiscard() {
+        this.props.records.discard(this.props.record.name);
+    }
+    onClickDelete() {
+        this.props.records.delete(this.props.record.name);
     }
 }
 __decorate([
@@ -33339,6 +33352,9 @@ __decorate([
 __decorate([
     autobind
 ], RecordRow.prototype, "onClickDiscard", null);
+__decorate([
+    autobind
+], RecordRow.prototype, "onClickDelete", null);
 exports.default = RecordRow;
 
 

@@ -1,10 +1,12 @@
 import * as autobind from 'autobind-decorator';
 import * as React from 'react';
 import { Button } from 'react-bootstrap';
+import RecordsModel from '../RecordsModel';
 import DisplayObject from './DisplayObject';
 
 interface Props {
   record: deepstreamIO.Record;
+  records: RecordsModel;
   onEdit: (record: deepstreamIO.Record, field: string) => void;
 }
 
@@ -42,7 +44,7 @@ export default class RecordRow extends React.Component<Props, State> {
             <Button bsStyle="danger" bsSize="xsmall" onClick={this.onClickDiscard}>
               Discard
             </Button>
-            <Button bsStyle="danger" bsSize="xsmall" onClick={this.onClickDiscard}>
+            <Button bsStyle="danger" bsSize="xsmall" onClick={this.onClickDelete}>
               Delete
             </Button>
           </div>
@@ -62,7 +64,12 @@ export default class RecordRow extends React.Component<Props, State> {
   }
 
   @autobind
-  private onClickDiscard(data: any) {
-    // this.setState({ data });
+  private onClickDiscard() {
+    this.props.records.discard(this.props.record.name);
+  }
+
+  @autobind
+  private onClickDelete() {
+    this.props.records.delete(this.props.record.name);
   }
 }

@@ -34,12 +34,14 @@ export default class RecordsModel {
     }
   }
 
-  // public call(rpc: string, args?: any) {
-  //   this.client.rpc.make(rpc, args, (result: any) => {
-  //     this.log = this.log.push({ rpc, result });
-  //     if (this.onLogChanged) {
-  //       this.onLogChanged();
-  //     }
-  //   });
-  // }
+  public delete(name: string) {
+    const record = this.records.get(name);
+    if (record) {
+      record.delete();
+      this.records = this.records.delete(name);
+      if (this.onRecordsChanged) {
+        this.onRecordsChanged();
+      }
+    }
+  }
 }

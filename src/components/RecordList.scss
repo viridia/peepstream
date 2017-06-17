@@ -10,7 +10,9 @@
       }
 
       th.name, td.name {
-        width: 10ch;
+        width: 14ch;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
       }
 
       td.record {

@@ -48,7 +48,12 @@ export default class RecordList extends React.Component<Props, State> {
             </thead>
             <tbody>
               {this.state.records.sort().map((r: deepstreamIO.Record) => (
-                <RecordRow key={r.name} record={r} onEdit={this.onShowEdit} />
+                <RecordRow
+                  key={r.name}
+                  record={r}
+                  records={this.props.records}
+                  onEdit={this.onShowEdit}
+                />
               ))}
             </tbody>
           </table>
