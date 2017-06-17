@@ -31997,6 +31997,7 @@ const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/inde
 const React = __webpack_require__(0);
 const react_bootstrap_1 = __webpack_require__("./node_modules/react-bootstrap/es/index.js");
 __webpack_require__("./src/components/CallDialog.scss");
+/** Dialog for making an RPC call. */
 class CallDialog extends React.Component {
     constructor() {
         super();
@@ -32130,6 +32131,7 @@ const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/inde
 const React = __webpack_require__(0);
 const DisclosureTriangle_1 = __webpack_require__("./src/components/DisclosureTriangle.tsx");
 __webpack_require__("./src/components/Display.scss");
+/** Displays a JSON object with expandable hierarchy. */
 class DisplayObject extends React.Component {
     constructor(props) {
         super(props);
@@ -32267,6 +32269,7 @@ const React = __webpack_require__(0);
 const react_bootstrap_1 = __webpack_require__("./node_modules/react-bootstrap/es/index.js");
 __webpack_require__("./src/components/EventList.scss");
 const EventLog_1 = __webpack_require__("./src/components/EventLog.tsx");
+/** Displays the list of deepsteam events we are currently watching. */
 class EventList extends React.Component {
     componentWillMount() {
         this.props.events.onEventsChanged = this.onEventsChanged;
@@ -32334,6 +32337,7 @@ const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/inde
 const React = __webpack_require__(0);
 __webpack_require__("./src/components/EventList.scss");
 const EventLogEntry_1 = __webpack_require__("./src/components/EventLogEntry.tsx");
+/** Displays the log of events which have occurred while we are listening. */
 class EventLog extends React.Component {
     constructor(props) {
         super(props);
@@ -32382,6 +32386,7 @@ const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/inde
 const classNames = __webpack_require__("./node_modules/classnames/index.js");
 const React = __webpack_require__(0);
 const DisclosureTriangle_1 = __webpack_require__("./src/components/DisclosureTriangle.tsx");
+/** A single entry in the event log display. */
 class EventLogEntry extends React.Component {
     constructor(props) {
         super(props);
@@ -32427,7 +32432,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/index.js");
 const React = __webpack_require__(0);
 const react_bootstrap_1 = __webpack_require__("./node_modules/react-bootstrap/es/index.js");
-class SubscribeDialog extends React.Component {
+/** A generic dialog that prompts for a single string. */
+class GetStringDialog extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -32460,14 +32466,14 @@ class SubscribeDialog extends React.Component {
 }
 __decorate([
     autobind
-], SubscribeDialog.prototype, "onChangeValue", null);
+], GetStringDialog.prototype, "onChangeValue", null);
 __decorate([
     autobind
-], SubscribeDialog.prototype, "onKeyDown", null);
+], GetStringDialog.prototype, "onKeyDown", null);
 __decorate([
     autobind
-], SubscribeDialog.prototype, "onClickSubscribe", null);
-exports.default = SubscribeDialog;
+], GetStringDialog.prototype, "onClickSubscribe", null);
+exports.default = GetStringDialog;
 
 
  ;(function register() { /* react-hot-loader/webpack */ if (undefined !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "/home/talin/Projects/peepstream/src/components/GetStringDialog.tsx"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/talin/Projects/peepstream/src/components/GetStringDialog.tsx"); } } })();
@@ -32489,6 +32495,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/index.js");
 const React = __webpack_require__(0);
 const react_bootstrap_1 = __webpack_require__("./node_modules/react-bootstrap/es/index.js");
+/** Dialog that prompts for the deepstream login info. */
 class LoginDialog extends React.Component {
     constructor() {
         super();
@@ -32641,6 +32648,7 @@ var NavSelection;
     NavSelection[NavSelection["LISTS"] = 3] = "LISTS";
     NavSelection[NavSelection["USERS"] = 4] = "USERS";
 })(NavSelection || (NavSelection = {}));
+/** Root element of the application */
 class Page extends React.Component {
     constructor() {
         super();
@@ -32929,6 +32937,7 @@ const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/inde
 const React = __webpack_require__(0);
 const react_bootstrap_1 = __webpack_require__("./node_modules/react-bootstrap/es/index.js");
 __webpack_require__("./src/components/PostDialog.scss");
+/** Dialog for posting a deepstream event. */
 class PostDialog extends React.Component {
     constructor() {
         super();
@@ -33075,6 +33084,7 @@ const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/inde
 const React = __webpack_require__(0);
 const react_bootstrap_1 = __webpack_require__("./node_modules/react-bootstrap/es/index.js");
 __webpack_require__("./src/components/RecordEditDialog.scss");
+/** Dialog for editing the content of a record. */
 class RecordEditDialog extends React.Component {
     constructor(props) {
         super(props);
@@ -33203,6 +33213,7 @@ const React = __webpack_require__(0);
 const RecordEditDialog_1 = __webpack_require__("./src/components/RecordEditDialog.tsx");
 __webpack_require__("./src/components/RecordList.scss");
 const RecordRow_1 = __webpack_require__("./src/components/RecordRow.tsx");
+/** Displays the list of deepstream records we are currently watching. */
 class RecordList extends React.Component {
     constructor(props) {
         super(props);
@@ -33382,6 +33393,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const autobind = __webpack_require__("./node_modules/autobind-decorator/lib/index.js");
 const React = __webpack_require__(0);
 __webpack_require__("./src/components/RpcResultList.scss");
+/** Displays the list of results from RPC calls. */
 class RpcResultList extends React.Component {
     constructor(props) {
         super(props);
