@@ -207,7 +207,7 @@ export default class Page extends React.Component<undefined, State> {
         console.error(error, event, topic);
       }
     });
-    this.client.on('connectionStateChanged', (state, e) => {
+    this.client.on('connectionStateChanged', (state) => {
       this.setState({ clientState: state });
       console.log('state:', state);
     });

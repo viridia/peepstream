@@ -9,6 +9,7 @@
     "no-console": false,
     "no-var-requires": false,
     "object-literal-sort-keys": false,
+    "object-shorthand-properties-first": false,
     "only-arrow-functions": false,
     "space-before-function-paren": [true, "anonymous"],
     "quotemark": [true, "single", "jsx-double"]
