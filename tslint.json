@@ -1,17 +1,25 @@
 {
-  "extends": ["tslint-config-airbnb", "tslint-react"],
+  "extends": ["tslint:latest", "tslint-config-airbnb", "tslint-react"],
   "rules": {
     "arrow-parens": false,
+    "export-name": true,
+    "forin": true,
     "interface-name": [true, "never-prefix"],
     "jsdoc-format": false,
     "jsx-no-multiline-js": false,
+    "literal-spacing": [true, { "array": ["never"], "object": ["always"], "import": ["always"] }],
     "max-line-length": [true, 100],
+    "no-consecutive-blank-lines": true,
     "no-console": false,
+    "no-trailing-whitespace": true,
     "no-var-requires": false,
     "object-literal-sort-keys": false,
     "object-shorthand-properties-first": false,
     "only-arrow-functions": false,
     "space-before-function-paren": [true, "anonymous"],
-    "quotemark": [true, "single", "jsx-double"]
+    "quotemark": [true, "single", "jsx-double"],
+    "react-tsx-curly-spacing": [true, "never", { "allowMultiline": true }],
+    "ter-func-call-spacing": [true, "never"],
+    "triple-equals": true
   }
 }
