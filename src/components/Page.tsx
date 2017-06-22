@@ -112,7 +112,7 @@ export default class Page extends React.Component<undefined, State> {
               Post&hellip;
             </Button>}
           {this.state.navSelection === NavSelection.EVENTS &&
-            <Button bsStyle="info" onClick={this.onClickSubscribe} disabled={!this.client}>>
+            <Button bsStyle="info" onClick={this.onClickSubscribe} disabled={!this.client}>
               Subscribe&hellip;
             </Button>}
           {this.state.navSelection === NavSelection.RPCS &&

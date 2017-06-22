@@ -1,5 +1,5 @@
 {
-  "extends": ["tslint:latest", "tslint-react"],
+  "extends": ["tslint-config-airbnb", "tslint-react"],
   "rules": {
     "arrow-parens": false,
     "interface-name": [true, "never-prefix"],
@@ -8,7 +8,6 @@
     "max-line-length": [true, 100],
     "no-console": false,
     "no-var-requires": false,
-    "no-unused-variable": [true],
     "object-literal-sort-keys": false,
     "only-arrow-functions": false,
     "space-before-function-paren": [true, "anonymous"],

@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
+    "lint": "tslint -c tslint.json src/**/*.ts",
     "start": "node devServer.js"
   },
   "dependencies": {
@@ -38,6 +39,7 @@
     "@types/react-hot-loader": "^3.0.1",
     "@types/webpack-env": "^1.13.0",
     "tslint": "^5.4.2",
+    "tslint-config-airbnb": "^5.2.0",
     "tslint-react": "^3.0.0",
     "webpack-dev-server": "^2.4.5"
   }
