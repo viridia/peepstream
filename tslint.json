@@ -4,6 +4,7 @@
     "arrow-parens": false,
     "export-name": true,
     "forin": true,
+    "import-name": false,
     "interface-name": [true, "never-prefix"],
     "jsdoc-format": false,
     "jsx-no-multiline-js": false,

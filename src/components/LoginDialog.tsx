@@ -1,6 +1,6 @@
-import * as autobind from 'autobind-decorator';
+import autobind from 'bind-decorator';
 import * as React from 'react';
-import { Button, ControlLabel, Form, FormControl, FormGroup, Modal } from 'react-bootstrap';
+import { Button, ControlLabel, FormControl, FormGroup, Modal } from 'react-bootstrap';
 
 interface Props {
   show: boolean;

@@ -1,4 +1,4 @@
-import * as autobind from 'autobind-decorator';
+import autobind from 'bind-decorator';
 import * as React from 'react';
 import { Button, ControlLabel, FormControl, FormGroup, HelpBlock, Modal } from 'react-bootstrap';
 import './CallDialog.scss';

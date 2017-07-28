@@ -1,4 +1,4 @@
-import * as autobind from 'autobind-decorator';
+import autobind from 'bind-decorator';
 import * as Immutable from 'immutable';
 
 interface Subscription {

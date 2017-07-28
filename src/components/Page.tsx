@@ -1,4 +1,4 @@
-import * as autobind from 'autobind-decorator';
+import autobind from 'bind-decorator';
 import * as classNames from 'classnames';
 import * as deepstream from 'deepstream.io-client-js';
 import * as React from 'react';

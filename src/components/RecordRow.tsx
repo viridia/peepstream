@@ -1,4 +1,4 @@
-import * as autobind from 'autobind-decorator';
+import autobind from 'bind-decorator';
 import * as React from 'react';
 import { Button } from 'react-bootstrap';
 import RecordsModel from '../RecordsModel';

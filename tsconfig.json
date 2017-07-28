@@ -14,6 +14,7 @@
     ],
     "typeRoots": [
       "node_modules/@types",
+      "node_modules/bind-decorator",
       "node_modules/deepstream.io-client-ks/src"
     ]
   },
