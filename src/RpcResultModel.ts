@@ -2,6 +2,7 @@ import * as Immutable from 'immutable';
 
 export interface LogEntry {
   rpc: string;
+  error: any;
   result: any;
 }
 
@@ -17,8 +18,8 @@ export default class RpcResultModel {
   }
 
   public call(rpc: string, args?: any) {
-    this.client.rpc.make(rpc, args, (result: any) => {
-      this.log = this.log.push({ rpc, result });
+    this.client.rpc.make(rpc, args, (error: any, result: any) => {
+      this.log = this.log.push({ rpc, error, result });
       if (this.onLogChanged) {
         this.onLogChanged();
       }

@@ -220,7 +220,10 @@ export default class Page extends React.Component<undefined, State> {
         this.setState({ showConnecting: false, servers });
         window.sessionStorage.setItem('deepstream-servers', JSON.stringify(servers));
       } else {
-        console.log('login failed:', data);
+        console.log('login failed', { auth, success, data });
+        this.setState({ alert: `Login to ${url} with auth ${JSON.stringify(auth)} failed.`,
+                        showConnecting: false });
+        this.onClickDisconnect();
       }
     });
   }

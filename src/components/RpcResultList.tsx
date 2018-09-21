@@ -2,6 +2,7 @@ import autobind from 'bind-decorator';
 import * as Immutable from 'immutable';
 import * as React from 'react';
 import RpcResultModel, { LogEntry } from '../RpcResultModel';
+import DisplayObject from './DisplayObject';
 import './RpcResultList.scss';
 
 interface Props {
@@ -37,12 +38,20 @@ export default class RpcResultList extends React.Component<Props, State> {
             <thead>
               <th className="rpc">RPC</th>
               <th className="result">Result</th>
+              <th className="result">Error</th>
             </thead>
             <tbody>
               {this.state.results.map((entry: LogEntry, index) => (
                   <tr key={index}>
                     <td className="rpc">{entry.rpc}</td>
-                    <td className="result">{entry.result}</td>
+                    <td className="result">
+                      {
+                        typeof entry.result === 'object'
+                          ? <DisplayObject data={entry.result} fieldName="" fieldPath="" />
+                          : entry.result
+                      }
+                    </td>
+                    <td className="result">{entry.error}</td>
                   </tr>
               ))}
             </tbody>

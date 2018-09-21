@@ -21,6 +21,8 @@
     "quotemark": [true, "single", "jsx-double"],
     "react-tsx-curly-spacing": [true, "never", { "allowMultiline": true }],
     "ter-func-call-spacing": [true, "never"],
+    "ter-indent": [true, 2],
+    "ordered-imports": false,
     "triple-equals": true
   }
 }
