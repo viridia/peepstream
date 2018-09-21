@@ -13,6 +13,7 @@ interface State {
   url: string;
   username: string;
   password: string;
+  custom: any;
 }
 
 /** Dialog that prompts for the deepstream login info. */
@@ -24,6 +25,7 @@ export default class LoginDialog extends React.Component<Props, State> {
     this.state = {
       url: savedState.url || '',
       username: savedState.username || '',
+      custom: savedState.custom || '',
       password: '',
     };
   }
@@ -70,6 +72,14 @@ export default class LoginDialog extends React.Component<Props, State> {
                 onKeyDown={this.onKeyDown}
             />
           </FormGroup>
+          <FormGroup controlId="login-custom">
+            <ControlLabel>Custom</ControlLabel>
+            <FormControl
+                type="textarea"
+                value={this.state.custom}
+                onChange={this.onChangeCustom}
+            />
+          </FormGroup>
         </Modal.Body>
         <Modal.Footer>
           <Button bsStyle="default" onClick={this.props.onHide}>
@@ -103,6 +113,11 @@ export default class LoginDialog extends React.Component<Props, State> {
   }
 
   @autobind
+  private onChangeCustom(e: any) {
+    this.setState({ custom: e.target.value });
+  }
+
+  @autobind
   private onKeyDown(e: any) {
     if (e.keyCode === 13 && this.state.url.length > 0) {
       this.onClickLogIn();
@@ -111,15 +126,18 @@ export default class LoginDialog extends React.Component<Props, State> {
 
   @autobind
   private onClickLogIn() {
-    const { url, username, password } = this.state;
-    const auth: any = {};
-    if (username) {
+    const { url, username, password, custom } = this.state;
+    const auth: any = custom ? JSON.parse(custom) : {};
+    if (username && !auth.username) {
       auth.username = username;
     }
-    if (password) {
+    if (password && !auth.password) {
       auth.password = password;
     }
-    window.sessionStorage.setItem('deepstream-last-login', JSON.stringify({ url, username }));
+    console.info({ url, auth });
+    window.sessionStorage.setItem(
+      'deepstream-last-login',
+      JSON.stringify({ url, username, custom }));
     this.props.onLogin(url, auth);
   }
 }
